@@ -11,8 +11,6 @@
  * 5. Перепишите функцию так, чтобы результат возвращался неявно
  */
 
-const helloWorld = () => {
-  return 'Привет, мир!';
-};
+const helloWorld = () => 'Привет, мир!';
 
 console.log(helloWorld());

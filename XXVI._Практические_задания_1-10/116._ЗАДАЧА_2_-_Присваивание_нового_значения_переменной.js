@@ -10,3 +10,13 @@
  *
  * 5. Выведите значение переменной в консоль
  */
+
+let isStutent;
+
+isStutent = true;
+
+console.log(isStutent);
+
+isStutent = false;
+
+console.log(isStutent);

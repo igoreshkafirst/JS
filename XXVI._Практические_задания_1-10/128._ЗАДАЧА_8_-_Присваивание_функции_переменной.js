@@ -10,3 +10,11 @@
  *
  * 5. Результат вызовов функции выведите в консоль
  */
+
+const hello = function (name) {
+  return 'Привет, ' + name;
+};
+
+console.log(hello('Mr'));
+
+console.log(hello('First'));

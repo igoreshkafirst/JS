@@ -4,3 +4,9 @@
  *
  * 2. Виведите в консоль длину этой строки
  */
+
+const myFavoriteSport = 'Chess';
+
+const stringLength = myFavoriteSport.length;
+
+console.log(stringLength);

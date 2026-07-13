@@ -9,7 +9,8 @@
 let myVariable1 = 10;
 let myVariable2 = '5';
 
-// Напишите код здесь
+console.log('25');
+console.log(typeof '25');
 
 myVariable1 = '20';
 myVariable2 = 100;

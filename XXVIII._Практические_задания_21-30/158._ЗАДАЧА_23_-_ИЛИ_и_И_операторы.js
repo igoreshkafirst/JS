@@ -3,4 +3,5 @@
  * Что будет выведено в консоль?
  */
 
-console.log(3 || (true && null) || false);
+console.log(true && null && 10); // <-- null
+console.log(true && 'abc' && 10); // <-- 10

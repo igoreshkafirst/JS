@@ -13,8 +13,11 @@
  * "Сообщение номер 5"
  */
 
-setInterval(() => {
-  let i = 1;
+let i = 1;
+
+const messageIntervalId = setInterval(() => {
   console.log('Сообщение ' + i);
   i = i + 1;
 }, 2000);
+
+clearInterval(messageIntervalId);

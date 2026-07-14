@@ -5,11 +5,13 @@
  * 2. Что будет, если отключить строгий режим?
  */
 
-'use strict';
-
 function myFunction() {
   a = 2;
+  console.log(a);
   return a;
 }
 
-myFunction();
+const result = myFunction();
+console.log(result);
+
+console.log(a);

@@ -5,13 +5,15 @@
  * 2. Что будет, если отключить строгий режим?
  */
 
+'use strict';
+
 function myFunction() {
-  a = 2;
-  console.log(a);
+  const a = 2;
   return a;
 }
 
-const result = myFunction();
-console.log(result);
+myFunction();
 
-console.log(a);
+// // Переменная "a" доступна только внутри функции
+// console.log(a)
+// // ReferenceError: a is not defined

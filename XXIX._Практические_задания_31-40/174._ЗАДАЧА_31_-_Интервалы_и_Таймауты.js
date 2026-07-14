@@ -13,4 +13,8 @@
  * "Сообщение номер 5"
  */
 
-setInterval(() => console.log('Сообщение'), 2000);
+setInterval(() => {
+  let i = 1;
+  console.log('Сообщение ' + i);
+  i = i + 1;
+}, 2000);

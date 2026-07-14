@@ -20,4 +20,4 @@ const messageIntervalId = setInterval(() => {
   i = i + 1;
 }, 2000);
 
-clearInterval(messageIntervalId);
+setTimeout(() => clearInterval(messageIntervalId), 11000);

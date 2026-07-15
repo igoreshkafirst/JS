@@ -13,3 +13,6 @@ const myObject = {
   key4: null,
   key10: NaN,
 };
+
+const result = Object.keys(myObject);
+console.log(result);

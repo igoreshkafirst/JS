@@ -23,4 +23,15 @@ const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-console.log(randomNumber(1, 10));
+const addRandomNumberToArray = (arr, min, max) => {
+  const newRandomNumber = randomNumber(min, max);
+
+  arr.push(newRandomNumber);
+
+  return arr;
+};
+
+const updatedArray = addRandomNumberToArray(myNumbers, MIN, MAX);
+
+console.log('UPDATED ARRAY', updatedArray);
+console.log('ORIGINAL ARRAY', myNumbers);

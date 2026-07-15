@@ -25,10 +25,10 @@ const randomNumber = (min, max) => {
 
 const addRandomNumberToArray = (arr, min, max) => {
   const newRandomNumber = randomNumber(min, max);
+  const updatedArr = [...arr];
+  updatedArr.push(newRandomNumber);
 
-  arr.push(newRandomNumber);
-
-  return arr;
+  return updatedArr;
 };
 
 const updatedArray = addRandomNumberToArray(myNumbers, MIN, MAX);

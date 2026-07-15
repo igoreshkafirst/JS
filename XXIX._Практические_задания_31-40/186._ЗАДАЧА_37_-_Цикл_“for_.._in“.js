@@ -13,4 +13,6 @@ const myObject = {
 
 Object.prototype.country = 'England';
 
-console.log(myObject.country);
+for (let key in myObject) {
+  console.log(myObject[key]);
+}

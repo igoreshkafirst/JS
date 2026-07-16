@@ -16,6 +16,14 @@ const arraySortInfo = (inputArray) => {
     return 'Некоторые элементы не являются числами';
   }
 
+  if (
+    inputArray.every((element, index) =>
+      index > 0 ? element >= inputArray[index - 1] : true,
+    )
+  ) {
+    return 'Массив отсортирован по возрастанию';
+  }
+
   return 'Массив не отсортирован';
 };
 

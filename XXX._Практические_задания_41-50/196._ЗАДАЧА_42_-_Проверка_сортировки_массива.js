@@ -24,6 +24,14 @@ const arraySortInfo = (inputArray) => {
     return 'Массив отсортирован по возрастанию';
   }
 
+  if (
+    inputArray.every((element, index) =>
+      index > 0 ? element <= inputArray[index - 1] : true,
+    )
+  ) {
+    return 'Массив отсортирован по убыванию';
+  }
+
   return 'Массив не отсортирован';
 };
 

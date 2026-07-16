@@ -16,7 +16,10 @@ const postsJSON = [
   '{"postId":2351,"commentsQuantity":8}',
 ];
 
-const postsJS = postsJSON.map((post) => JSON.parse(post));
+// Учебный пример.
+// В реальном коде чаще используют:
+// postsJSON.map(post => JSON.parse(post))
+const postsJS = postsJSON.map(JSON.parse);
 
 console.log(postsJS);
 

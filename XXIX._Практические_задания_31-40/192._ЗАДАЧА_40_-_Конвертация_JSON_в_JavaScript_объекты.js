@@ -21,3 +21,5 @@ const postsJS = postsJSON.map((post) => JSON.parse(post));
 console.log(postsJS);
 
 console.log(postsJS[1].postId);
+
+console.log(postsJS[postsJS.length - 1].commentsQuantity);

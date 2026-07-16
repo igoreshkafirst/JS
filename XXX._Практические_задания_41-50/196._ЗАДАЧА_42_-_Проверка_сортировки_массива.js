@@ -12,7 +12,7 @@
  */
 
 const arraySortInfo = (inputArray) => {
-  if (inputArray.find((element) => typeof element !== 'number')) {
+  if (inputArray.some((element) => typeof element !== 'number')) {
     return 'Некоторые элементы не являются числами';
   }
 

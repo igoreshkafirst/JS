@@ -10,7 +10,13 @@
  */
 
 function isElementInArray(searchElement, inputArray) {
-  return inputArray.includes(searchElement);
+  if (typeof searchElement !== 'object') {
+    return inputArray.includes(searchElement);
+  }
+
+  return inputArray
+    .map((element) => JSON.stringify(element))
+    .includes(JSON.stringify(searchElement));
 }
 
 const tags = [

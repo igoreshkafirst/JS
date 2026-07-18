@@ -11,9 +11,12 @@
  */
 
 const pushIfUnique = (inputArray, newElement) => {
+  // Учебный пример.
+  // В реальном коде чаще используют:
+  /* console.log(...);
+     return; */
   if (inputArray.includes(newElement)) {
-    console.log(`${newElement} уже находится в массиве`);
-    return;
+    return console.log(`${newElement} уже находится в массиве`);
   }
 
   inputArray.push(newElement);

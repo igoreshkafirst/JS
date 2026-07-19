@@ -6,6 +6,16 @@
  * у которых количество комментариев не меньше "minimalComentsQty"
  */
 
+function popularPostsIds(posts, minimalComentsQty) {
+  return posts.reduce(
+    (postsIds, post) =>
+      post.comments >= minimalComentsQty
+        ? postsIds.concat([post.postId])
+        : postsIds,
+    [],
+  );
+}
+
 const inputPosts = [
   {
     title: 'Как быстро выучить JavaScript?',

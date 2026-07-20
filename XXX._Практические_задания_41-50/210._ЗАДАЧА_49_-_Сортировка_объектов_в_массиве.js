@@ -38,4 +38,4 @@ const inputProducts = [
 
 const myNumbers = [50, 23, 29, 100, 10];
 
-console.log(myNumbers.sort());
+console.log(myNumbers.sort((a, b) => a - b));

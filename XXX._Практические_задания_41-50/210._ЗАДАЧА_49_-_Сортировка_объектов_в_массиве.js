@@ -36,6 +36,12 @@ const inputProducts = [
   },
 ];
 
-const myNumbers = [50, 23, 29, 100, 10];
+const sortProductsByPrice = (products) => {
+  return products.sort((a, b) => a.price - b.price);
+};
 
-console.log(myNumbers.sort((a, b) => a - b));
+const sortedProducts = sortProductsByPrice(inputProducts);
+
+console.log(sortedProducts); // Массив отсортированных товаров
+
+console.log(inputProducts); // Оригинальный массив не должен измениться

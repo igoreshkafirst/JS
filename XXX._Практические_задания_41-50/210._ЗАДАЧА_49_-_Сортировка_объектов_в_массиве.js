@@ -37,7 +37,8 @@ const inputProducts = [
 ];
 
 const sortProductsByPrice = (products) => {
-  return products.sort((a, b) => a.price - b.price);
+  const copyOfProducts = [...products];
+  return copyOfProducts.sort((a, b) => a.price - b.price);
 };
 
 const sortedProducts = sortProductsByPrice(inputProducts);

@@ -7,6 +7,15 @@
  * 3. Ниже приведены примеры вызовов функции.
  */
 
+const templateLiteral = (num) => {
+  return `
+Привет
+привет
+привет
+привет
+привет`;
+};
+
 // ТЕСТ 1
 const myNumber = 9;
 console.log(templateLiteral(myNumber));

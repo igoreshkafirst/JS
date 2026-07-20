@@ -8,8 +8,11 @@
  */
 
 function quantitiesByCategories(products) {
+  // Учебный пример.
+  /* Без значения по умолчанию первое сложение вернет NaN. */
   return products.reduce((qtysByCategories, product) => {
-    qtysByCategories[product.category] = product.quantity;
+    qtysByCategories[product.category] =
+      qtysByCategories[product.category] + product.quantity;
 
     return qtysByCategories;
   }, {});

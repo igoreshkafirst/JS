@@ -14,6 +14,18 @@
  */
 
 function meanScore(...numbers) {
+  if (numbers.some((num) => typeof num !== 'number')) {
+    console.error('Все аргументы в вызове функции должны быть числами!');
+    /* В реальном коде вместо console.error часто используют:
+       throw new Error('Все аргументы в вызове функции должны быть числами!'); */
+    return;
+  }
+
+  /**
+   * num1 / numbers.length + num1 / numbers.length + ... +  num10 / numbers.length
+   * РАВНОСИЛЬНО
+   * (num1 + num2 + ... + num10) / numbers.length
+   */
   return numbers
     .reduce((mean, num) => mean + num / numbers.length, 0)
     .toFixed(2);
@@ -29,3 +41,5 @@ console.log(meanScore(...scores1)); // 1.93
 console.log(meanScore(...scores1, ...scores2)); // 2.8
 
 console.log(meanScore(...scores1, ...scores2, ...scores3)); // 2.59
+
+console.log(meanScore(...scores4)); // Все аргументы в вызове функции должны быть числами!

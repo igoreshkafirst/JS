@@ -14,6 +14,10 @@
  * Внимательно сравните свои результаты с результатами тестовых вызовов
  */
 
+function weatherForecast(city, weather) {
+  return `Прогноз погоды для города ${city}: ${weather}`;
+}
+
 console.log(weatherForecast('Dubai', 'Солнечно')); // Прогноз погоды для города Dubai: Солнечно
 
 console.log(weatherForecast('London', 'Небольшой дождь')); // Прогноз погоды для города London: Небольшой дождь

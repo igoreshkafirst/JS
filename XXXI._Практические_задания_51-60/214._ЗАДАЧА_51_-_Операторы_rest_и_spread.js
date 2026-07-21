@@ -18,9 +18,8 @@ const scores2 = [1.7, 4.5, 0, 4.9, 5.0, 4.2];
 const scores3 = [1.3, 2.5, 1.9];
 const scores4 = ['abc', 1.3, true, 2.5, 1.9];
 
-const myFn = (a, ...b) => {
+const myFn = (...a) => {
   console.log(a);
-  console.log(b);
 };
 
 myFn(10, 2, 7, 1);

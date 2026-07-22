@@ -18,7 +18,7 @@ const photosGallery = (title, dimensions, date) => {
     info() {
       console.log(`Фото "${title}" имеет разрешение ${dimensions}`);
     },
-    dimensions: dimensions,
+    [dimensions]: true,
     publishInfo() {
       console.log(
         `Фото "${title}" было опубликовано ${Math.floor(
@@ -44,3 +44,5 @@ setTimeout(() => myDogPhoto.publishInfo(), 2000); // Фото "My dog" было 
 
 console.log(myDogPhoto[testDimension1]); // true
 console.log(myDogPhoto[testDimension2]); // undefined
+
+console.log(Object.keys(myDogPhoto));

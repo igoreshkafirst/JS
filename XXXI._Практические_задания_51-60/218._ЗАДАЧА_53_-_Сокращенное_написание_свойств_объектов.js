@@ -15,11 +15,11 @@
 const photosGallery = (title, dimensions, date) => {
   return {
     title,
-    info: function () {
+    info() {
       console.log(`Фото "${title}" имеет разрешение ${dimensions}`);
     },
     dimensions: dimensions,
-    publishInfo: () => {
+    publishInfo() {
       console.log(
         `Фото "${title}" было опубликовано ${Math.floor(
           (new Date().getTime() - date.getTime()) / 1000,

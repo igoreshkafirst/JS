@@ -14,7 +14,7 @@ const processPosts = (posts) => {
     return {
       postId: post.postId + 1000,
       postAuthor: post.author,
-      postCommentsQty: post.commentsQty,
+      postCommentsQty: post.commentsQty === undefined ? 0 : post.commentsQty,
     };
   });
 };

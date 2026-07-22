@@ -14,7 +14,7 @@
 
 const photosGallery = (title, dimensions, date) => {
   return {
-    title: title,
+    title,
     info: function () {
       console.log(`Фото "${title}" имеет разрешение ${dimensions}`);
     },
@@ -26,7 +26,7 @@ const photosGallery = (title, dimensions, date) => {
         )} секунды назад`,
       );
     },
-    date: date,
+    date,
   };
 };
 

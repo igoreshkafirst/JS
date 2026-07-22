@@ -11,10 +11,15 @@
 
 const processPosts = (posts) => {
   return posts.map((post) => {
+    const {
+      postId,
+      author: postAuthor,
+      commentsQty: postCommentsQty = 0,
+    } = post;
     return {
-      postId: post.postId + 1000,
-      postAuthor: post.author,
-      postCommentsQty: post.commentsQty === undefined ? 0 : post.commentsQty,
+      postAuthor,
+      postCommentsQty,
+      postId: postId + 1000,
     };
   });
 };

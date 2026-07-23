@@ -17,6 +17,11 @@ let person = {
   cartId: 435,
 };
 
+// OPTION: Delete operator
+delete person._id;
+delete person.processed;
+delete person.cart;
+
 console.log(person);
 /*
 {

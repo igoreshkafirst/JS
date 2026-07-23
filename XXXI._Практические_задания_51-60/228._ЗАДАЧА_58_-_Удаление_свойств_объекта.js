@@ -7,7 +7,7 @@
  * не будут доступны после операции деструктуризации.
  */
 
-let person = {
+const person = {
   _id: '5ad8cefcc0971792dacb3f1f',
   index: 4,
   processed: false,

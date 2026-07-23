@@ -17,7 +17,8 @@ let person = {
   cartId: 435,
 };
 
-let _id, processed, cart;
+{
+  let _id, processed, cart;
 
 // Попытка записать так:
 /* const { _id, processed, cart, ...person } = person; */
@@ -30,9 +31,10 @@ let _id, processed, cart;
 /* SyntaxError: Unexpected token '...' */
 
 // Поэтому при деструктуризации с присваиванием используется запись:
-({ _id, processed, cart, ...person } = person);
+  ({ _id, processed, cart, ...person } = person);
+  console.log(_id, processed, cart);
+}
 
-console.log(_id, processed, cart);
 console.log(person);
 /*
 {

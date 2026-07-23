@@ -21,7 +21,7 @@
  */
 
 class CustomArray extends Array {
-  customPush(newElement) {
+  push(newElement) {
     console.log(this.length);
     this[this.length] = newElement;
     console.log(this.length);
@@ -30,10 +30,6 @@ class CustomArray extends Array {
 }
 
 const myCustomArray = new CustomArray(10, 3, 7, 5);
-myCustomArray.customPush(25);
-
-console.log(myCustomArray);
-
 myCustomArray.push(30);
 
 console.log(myCustomArray);

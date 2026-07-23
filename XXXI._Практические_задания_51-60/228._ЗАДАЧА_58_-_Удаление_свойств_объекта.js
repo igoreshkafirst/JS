@@ -17,10 +17,22 @@ let person = {
   cartId: 435,
 };
 
-const { _id, processed, cart, ...person2 } = person;
+let _id, processed, cart;
 
-console.log(person2);
+// Попытка записать так:
+/* const { _id, processed, cart, ...person } = person; */
+// приводит к:
+/* SyntaxError: Identifier 'person' has already been declared */
 
+// А запись без круглых скобок:
+/* { _id, processed, cart, ...person } = person; */
+// приводит к:
+/* SyntaxError: Unexpected token '...' */
+
+// Поэтому при деструктуризации с присваиванием используется запись:
+({ _id, processed, cart, ...person } = person);
+
+console.log(_id, processed, cart);
 console.log(person);
 /*
 {

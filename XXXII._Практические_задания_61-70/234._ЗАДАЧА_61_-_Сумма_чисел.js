@@ -8,9 +8,18 @@
  * 3. Также верните эту сумму как результат функции
  */
 
-const sumNumbers = () => {
-  console.log(arguments);
-};
+function sumNumbers() {
+  // Учебный пример.
+  /*
+  arguments — не массив, поэтому так не работает:
+  arguments.forEach((arg) => console.log(arg));
+  // TypeError: arguments.forEach is not a function
+  */
+
+  for (let i = 0; i < arguments.length; i++) {
+    console.log(arguments[i]);
+  }
+}
 
 sumNumbers(1, 3); // 4
 

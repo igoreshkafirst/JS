@@ -9,16 +9,13 @@
  */
 
 function sumNumbers() {
-  // Учебный пример.
-  /*
-  arguments — не массив, поэтому так не работает:
-  arguments.forEach((arg) => console.log(arg));
-  // TypeError: arguments.forEach is not a function
-  */
-
+  let sum = 0;
   for (let i = 0; i < arguments.length; i++) {
-    console.log(arguments[i]);
+    sum += arguments[i];
   }
+  console.log('Sum of all arguments is', sum);
+
+  return sum;
 }
 
 sumNumbers(1, 3); // 4

@@ -7,9 +7,14 @@
  * 3. Также вызовите обе функции
  */
 
+// Первый
 function firstFunction(a, b) {
   return a + b;
 }
+
+// We can assign new value
+firstFunction = '123';
+console.log(firstFunction);
 
 const secondFunction = function (a, b) {
   return a + b;

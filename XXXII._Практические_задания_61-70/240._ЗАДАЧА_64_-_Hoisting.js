@@ -10,10 +10,21 @@ const a = 5;
 const b = 10;
 
 if (b > a) {
+  let c = 2;
   c = a + b + c;
+  /* Если заменить "let" на "var":
+  
+     var c = 2;
+  
+     то первая ошибка тоже исчезнет,
+     но переменная станет доступна вне блока,
+     поэтому console.log(c) после блока
+     уже не вызовет ReferenceError.
+  
+     Именно поэтому здесь используется let. */
+
   // ДО: ReferenceError: Cannot access 'c' before initialization
   // ПОСЛЕ: Нет ошибки
-  let c = 2;
   console.log(c);
   // 17
 }

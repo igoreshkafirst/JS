@@ -9,7 +9,7 @@
  */
 
 const sumNumbers = () => {
-  console.log(arguments.length);
+  console.log(arguments);
 };
 
 sumNumbers(1, 3); // 4

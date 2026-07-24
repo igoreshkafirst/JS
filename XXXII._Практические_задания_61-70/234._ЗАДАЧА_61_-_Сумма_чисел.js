@@ -8,9 +8,9 @@
  * 3. Также верните эту сумму как результат функции
  */
 
-function sumNumbers() {
+const sumNumbers = () => {
   console.log(arguments.length);
-}
+};
 
 sumNumbers(1, 3); // 4
 

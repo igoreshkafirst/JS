@@ -8,6 +8,10 @@
  * 3. Также верните эту сумму как результат функции
  */
 
+function sumNumbers() {
+  console.log(arguments);
+}
+
 sumNumbers(1, 3); // 4
 
 sumNumbers(10, 20, 5); // 35

@@ -7,15 +7,28 @@
  * 3. Также вызовите обе функции
  */
 
-// Первый
 function firstFunction(a, b) {
   return a + b;
 }
 
-// We can assign new value
-firstFunction = '123';
-console.log(firstFunction);
-
 const secondFunction = function (a, b) {
   return a + b;
 };
+
+// Function Declaration можно вызвать до объявления:
+// console.log(firstFunction(2, 3));
+
+// Function Expression нельзя вызвать до объявления:
+// secondFunction(2, 7);
+// ReferenceError: Cannot access 'secondFunction' before initialization
+
+// Function Declaration можно переопределить:
+// firstFunction = '123';
+
+// Function Expression, объявленную через const,
+// нельзя переназначить:
+// secondFunction = true;
+// TypeError: Assignment to constant variable.
+
+console.log(firstFunction(2, 5));
+console.log(secondFunction(5, 10));

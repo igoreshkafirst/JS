@@ -6,8 +6,15 @@
 
 const a = [1, 2, 3];
 
-// OPTION 2
-const b = Array.from(a);
+// OPTION 3
+/* Подходит только для простых данных.
+   Не сохраняет:
+   - ссылки на объекты;
+   - Date;
+   - Map, Set;
+   - функции;
+   - undefined и др. */
+const b = JSON.parse(JSON.stringify(a));
 
 b.push('newElement');
 

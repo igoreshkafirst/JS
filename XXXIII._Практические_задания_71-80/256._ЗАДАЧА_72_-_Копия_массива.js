@@ -6,7 +6,8 @@
 
 const a = [1, 2, 3];
 
-// Напишите код здесь
+// OPTION 1
+const b = [...a];
 
 b.push('newElement');
 

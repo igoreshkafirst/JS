@@ -12,8 +12,8 @@ function square(a) {
      console.log(parseInt(undefined));   // NaN
 
      Поэтому перед вычислением добавляем проверку отсутствия аргумента. */
-  // OPTION 1
-  if (a === undefined) {
+  // OPTION 2
+  if (arguments.length === 0) {
     throw new Error('Функция "square" не может быть вызвана без аргумента');
   }
   console.log(a * a);

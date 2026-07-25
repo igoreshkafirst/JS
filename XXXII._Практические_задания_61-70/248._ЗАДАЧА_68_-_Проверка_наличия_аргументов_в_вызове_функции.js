@@ -6,6 +6,16 @@
  */
 
 function square(a) {
+  /* Почему возникает NaN:
+
+     console.log(undefined * undefined); // NaN
+     console.log(parseInt(undefined));   // NaN
+
+     Поэтому перед вычислением добавляем проверку отсутствия аргумента. */
+  // OPTION 1
+  if (a === undefined) {
+    throw new Error('Функция "square" не может быть вызвана без аргумента');
+  }
   console.log(a * a);
 }
 

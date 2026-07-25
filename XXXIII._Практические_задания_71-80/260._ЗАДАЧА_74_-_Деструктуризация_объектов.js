@@ -27,13 +27,11 @@ const person2 = {
   },
 };
 
-const shortPerson = (person) => {
-  const {
-    name: n,
-    info: { country: c, age: a },
-    postsQuantity: p = 0,
-  } = person;
-
+const shortPerson = ({
+  name: n,
+  info: { country: c, age: a },
+  postsQuantity: p = 0,
+}) => {
   return { n, c, a, p };
 };
 

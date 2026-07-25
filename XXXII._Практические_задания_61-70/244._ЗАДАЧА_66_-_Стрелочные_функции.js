@@ -3,9 +3,7 @@
  * Замените обычные функции на стрелочные
  */
 
-const mult = (a, b) => {
-  return a * b;
-};
+const mult = (a, b) => a * b;
 
 setTimeout(() => {
   console.log(mult(5, 10));

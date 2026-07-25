@@ -6,13 +6,6 @@
  */
 
 function square(a) {
-  /* Почему возникает NaN:
-
-     console.log(undefined * undefined); // NaN
-     console.log(parseInt(undefined));   // NaN
-
-     Поэтому перед вычислением добавляем проверку отсутствия аргумента. */
-  // OPTION 2
   if (arguments.length === 0) {
     throw new Error('Функция "square" не может быть вызвана без аргумента');
   }
@@ -21,6 +14,13 @@ function square(a) {
 
 square(10); // 100
 
-square();
+/* Ошибка генерируется внутри функции.
+   try...catch позволяет перехватить ее
+   и продолжить выполнение программы. */
+try {
+  square();
+} catch (error) {
+  console.log(error.message);
+}
 // ДО: NaN
 // ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента

@@ -9,6 +9,11 @@ const b = [4, 5];
 const c = [8, 9, 10];
 const d = 11;
 
-// Напишите код здесь
+const combinedArray = [0, ...a, 3, ...b, 6, 7, ...c, d]; // Напишите код здесь
 
 console.log(combinedArray); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+// Original arrays were not changed
+console.log(a); // [1, 2]
+console.log(b); // [4, 5]
+console.log(c); // [8, 9, 10]

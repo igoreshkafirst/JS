@@ -8,8 +8,17 @@
  * для параметра mult в "multiplyBy"
  */
 
-function multiplyBy(a, mult) {
-  mult = mult !== undefined ? mult : 2;
+/* Использовать оператор || здесь нельзя:
+
+   mult = mult || 2;
+
+   потому что оператор || заменяет любое "ложное" значение,
+   включая 0, на значение по умолчанию.
+
+   Пример:
+   multiplyBy(2, 0); // получим 4 вместо ожидаемых 0 */
+
+function multiplyBy(a, mult = 2) {
   console.log(a * mult);
 }
 

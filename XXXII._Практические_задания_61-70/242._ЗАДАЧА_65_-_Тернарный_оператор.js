@@ -3,9 +3,8 @@
  * Измените функцию "isNumber", используя тернарный оператор
  */
 
-function isNumber(a) {
-  return typeof a === 'number' ? `${a} - это число` : `${a} - это не число`;
-}
+const isNumber = (a) =>
+  typeof a === 'number' ? `${a} - это число` : `${a} - это не число`;
 
 console.log(isNumber(10)); // 10 - это число
 

@@ -6,8 +6,8 @@
 
 const a = [1, 2, 3];
 
-// OPTION 1
-const b = [...a];
+// OPTION 2
+const b = Array.from(a);
 
 b.push('newElement');
 

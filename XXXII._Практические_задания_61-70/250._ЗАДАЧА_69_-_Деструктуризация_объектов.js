@@ -12,10 +12,8 @@ const objectWithNumbers = {
   z: 3,
 };
 
-// OPTION 1
-const mult = (nums) => {
-  const { x, y, z } = nums;
-
+// OPTION 2
+const mult = ({ x, y, z }) => {
   return x * y * z;
 };
 

@@ -12,9 +12,9 @@ const cars = [
   { brand: 'Rolls-Royce', price: 120000 },
 ];
 
-function carInfo(car) {
-  return `Цена автомобиля ${car.brand} - ${car.price}$ и это ${
-    car.price > 20000 ? 'дорогая' : 'дешёвая'
+function carInfo({ brand, price }) {
+  return `Цена автомобиля ${brand} - ${price}$ и это ${
+    price > 20000 ? 'дорогая' : 'дешёвая'
   } машина`;
 }
 

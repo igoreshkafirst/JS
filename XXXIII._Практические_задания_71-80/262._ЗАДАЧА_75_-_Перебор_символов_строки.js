@@ -9,6 +9,11 @@ const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 const str = 'Today is the best day of my life';
 
-console.log(str.split('is'));
+// OPTION 1
+str.split('').forEach((char) => {
+  if (vowels.includes(char)) {
+    vowelsCount += 1;
+  }
+});
 
 console.log(vowelsCount); // 9

@@ -36,6 +36,10 @@ greeting1.changeGreeting('Good Morning from');
 
 console.log(greeting1.greet('Emily')); // Good Morning from Emily
 
+greeting1.changeGreeting('Good Evening');
+
+console.log(greeting1.greet('Emily')); // Good Evening Emily
+
 /* ____________  */
 
 const greeting2 = createGreeting();

@@ -17,13 +17,13 @@ function sumPositiveNegative(arr) {
     (sums, num) => {
       if (num > 0) {
         return {
+          ...sums,
           positive: sums.positive + num,
-          negative: sums.negative,
         };
       }
 
       return {
-        positive: sums.positive,
+        ...sums,
         negative: sums.negative + num,
       };
     },

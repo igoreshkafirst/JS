@@ -17,16 +17,10 @@ const objectWithNumbers = {
 };
 
 function sumObjectValues(nums) {
-  let sum = 0;
-
-  Object.keys(nums).forEach((key) => {
-    if (typeof nums[key] === 'number') {
-      sum += nums[key];
-    }
-  });
-
-  return sum;
+  return Object.entries(nums).reduce((sum, [key, value]) => {
+    return typeof value === 'number' ? sum + value : sum;
+  }, 0);
 }
 
 const result = sumObjectValues(objectWithNumbers);
-console.log(result); //42
+console.log(result); // 42

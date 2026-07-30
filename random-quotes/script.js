@@ -4,3 +4,6 @@ const quotes = [
   "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
   // Add more quotes as needed
 ];
+
+const quoteElement = document.getElementById('quote');
+const generateBtn = document.getElementById('generate-btn');

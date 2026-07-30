@@ -15,3 +15,6 @@ function generateRandomQuote() {
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);
+
+// Generate a random quote when the page loads
+generateRandomQuote();

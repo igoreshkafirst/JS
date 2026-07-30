@@ -13,3 +13,5 @@ function generateRandomQuote() {
   const randomQuote = quotes[randomIndex];
   quoteElement.textContent = randomQuote;
 }
+
+generateBtn.addEventListener('click', generateRandomQuote);

@@ -52,8 +52,7 @@ function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
 
   const randomQuote = quotes[randomIndex];
-  const quote =
-    '<em>"' + randomQuote.quote + '"<em>' + '<br>' + randomQuote.author;
+  const quote = `<em>"${randomQuote.quote}"<em><br>${randomQuote.author}`;
 
   quoteElement.innerHTML = quote;
 }

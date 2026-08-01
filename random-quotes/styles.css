@@ -22,8 +22,3 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
-#author {
-  display: block; /* Make the span a block-level element */
-  margin-top: 10px; /* Adjust the top margin as needed */
-}

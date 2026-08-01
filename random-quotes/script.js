@@ -1,23 +1,44 @@
 const quotes = [
-  'The only way to do great work is to love what you do. - Steve Jobs',
-  'Innovation distinguishes between a leader and a follower. - Steve Jobs',
-  "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+  {
+    quote: 'The only way to do great work is to love what you do.',
+    author: 'Steve Jobs',
+  },
+  {
+    quote: 'Innovation distinguishes between a leader and a follower.',
+    author: 'Steve Jobs',
+  },
+  {
+    quote:
+      "Your time is limited, so don't waste it living someone else's life.",
+    author: 'Steve Jobs',
+  },
 ];
 
 const quoteElement = document.getElementById('quote');
 const generateBtn = document.getElementById('generate-btn');
 
 function generateRandomQuote() {
-  // Проверка, что обработчик действительно вызывается при нажатии кнопки
-  console.log('THIS FUNCTION WAS JUST CALLED');
-
   const randomIndex = Math.floor(Math.random() * quotes.length);
 
-  // Вывод случайного индекса для проверки диапазона значений
-  console.log(randomIndex);
-
   const randomQuote = quotes[randomIndex];
-  quoteElement.textContent = randomQuote;
+
+  // Просмотр выбранного объекта целиком.
+  /* Позволяет увидеть, что из массива возвращается объект
+     с двумя свойствами: quote и author. */
+  console.log(randomQuote);
+
+  // Принудительное преобразование объекта в строку.
+  /* Учебный пример, показывающий, что обычный объект
+     при преобразовании к строке становится "[object Object]". */
+  console.log(
+    String({
+      quote:
+        "Your time is limited, so don't waste it living someone else's life.",
+      author: 'Steve Jobs',
+    }),
+  );
+
+  quoteElement.textContent = randomQuote.quote;
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

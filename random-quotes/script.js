@@ -46,6 +46,7 @@ const quotes = [
 ];
 
 const quoteElement = document.getElementById('quote');
+const quoteAuthorElement = document.getElementById('quote-author');
 const generateBtn = document.getElementById('generate-btn');
 
 function generateRandomQuote() {

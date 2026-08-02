@@ -52,12 +52,8 @@ const generateBtn = document.getElementById('generate-btn');
 function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  const { quote, quoteAuthor } = randomQuote;
+  const { quote, author: quoteAuthor } = randomQuote;
 
-  // Учебная проверка.
-  /* Переменная quoteAuthor окажется undefined,
-     потому что такого свойства в объекте нет. */
-  console.log(quoteAuthor);
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = quoteAuthor;
 }

@@ -51,10 +51,10 @@ const generateBtn = document.getElementById('generate-btn');
 
 function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  const { quote, author: quoteAuthor } = quotes[randomIndex];
-
+  const randomQuote = quotes[randomIndex];
+  const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
-  quoteAuthorElement.textContent = quoteAuthor;
+  quoteAuthorElement.textContent = author;
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

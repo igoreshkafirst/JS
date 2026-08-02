@@ -51,11 +51,6 @@ const generateBtn = document.getElementById('generate-btn');
 
 function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-
-  // Учебная проверка.
-  /* Позволяет убедиться, что Math.random()
-     возвращает индекс только в пределах массива. */
-  console.log(randomIndex);
   const randomQuote = quotes[randomIndex];
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;

@@ -22,7 +22,7 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
+/* В "Оформление цитаты с помощью CSS-псевдоэлементов" заменить на "#quote" */
 .quote {
   font-style: italic;
 }

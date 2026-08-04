@@ -17,10 +17,7 @@ function generateRandomQuote() {
 }
 
 function toggleFavorite() {
-  // Учебная проверка.
-  /* При нажатии кнопки убеждаемся,
-     что функция получает индекс текущей цитаты. */
-  console.log(currentQuoteIndex);
+  quotes[currentQuoteIndex].isFavorite = !quotes[currentQuoteIndex].isFavorite; // Toggle the favorite status
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

@@ -6,13 +6,15 @@ const generateBtn = document.getElementById('generate-btn');
 
 let currentQuoteIndex;
 
-// Учебная проверка.
-/* До первой генерации цитаты значение currentQuoteIndex равно undefined. */
-console.log(currentQuoteIndex);
-
 function generateRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
+  currentQuoteIndex = Math.floor(Math.random() * quotes.length);
+
+  const randomQuote = quotes[currentQuoteIndex];
+
+  // Учебная проверка.
+  /* Показывает индекс случайно выбранной цитаты. */
+  console.log(currentQuoteIndex);
+
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;

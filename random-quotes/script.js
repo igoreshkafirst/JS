@@ -17,7 +17,14 @@ function generateRandomQuote() {
 }
 
 function toggleFavorite() {
-  quotes[currentQuoteIndex].isFavorite = !quotes[currentQuoteIndex].isFavorite; // Toggle the favorite status
+  const currentQuote = quotes[currentQuoteIndex];
+
+  currentQuote.isFavorite = !currentQuote.isFavorite; // Toggle the favorite status
+
+  // Учебная проверка.
+  // Позволяет убедиться, что после переключения
+  // свойство isFavorite изменяется у нужной цитаты.
+  console.log(quotes);
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

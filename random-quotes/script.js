@@ -17,6 +17,8 @@ function generateRandomQuote() {
   toggleFavoriteBtn.textContent = randomQuote.isFavorite
     ? 'Remove from favorites'
     : 'Add to favorites';
+
+  toggleFavoriteBtn.style.display = 'inline-block';
 }
 
 function toggleFavorite() {
@@ -37,11 +39,6 @@ function toggleFavorite() {
   } else {
     // Получаем все карточки избранных цитат.
     const favoriteCards = document.querySelectorAll('.favorite-card');
-
-    // Учебная проверка.
-    // Показывает NodeList со всеми найденными карточками.
-    console.log(favoriteCards);
-
     favoriteCards.forEach((card) => {
       if (card.textContent.includes(currentQuote.quote)) {
         card.remove();

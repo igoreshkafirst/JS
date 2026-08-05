@@ -18,11 +18,9 @@ function generateRandomQuote() {
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
   currentQuote.isFavorite = !currentQuote.isFavorite; // Toggle the favorite status
-  if (toggleFavoriteBtn.textContent === 'Add to favorites') {
-    toggleFavoriteBtn.textContent = 'Remove from favorites';
-  } else {
-    toggleFavoriteBtn.textContent = 'Add to favorites';
-  }
+  toggleFavoriteBtn.textContent = currentQuote.isFavorite
+    ? 'Remove from favorites'
+    : 'Add to favorites';
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

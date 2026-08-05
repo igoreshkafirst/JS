@@ -9,7 +9,6 @@ let currentQuoteIndex;
 
 function generateRandomQuote() {
   currentQuoteIndex = Math.floor(Math.random() * quotes.length);
-
   const randomQuote = quotes[currentQuoteIndex];
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
@@ -18,13 +17,8 @@ function generateRandomQuote() {
 
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
-
   currentQuote.isFavorite = !currentQuote.isFavorite; // Toggle the favorite status
-
-  // Учебная проверка.
-  // Позволяет убедиться, что после переключения
-  // свойство isFavorite изменяется у нужной цитаты.
-  console.log(quotes);
+  toggleFavoriteBtn.textContent = 'Remove from favorites';
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

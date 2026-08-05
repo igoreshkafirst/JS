@@ -4,6 +4,7 @@ const quoteElement = document.getElementById('quote');
 const quoteAuthorElement = document.getElementById('quote-author');
 const generateBtn = document.getElementById('generate-btn');
 const toggleFavoriteBtn = document.getElementById('toggle-favorite-btn');
+const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
 

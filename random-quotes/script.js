@@ -35,8 +35,13 @@ function toggleFavorite() {
       `;
     favoritesContainer.appendChild(favoriteCard);
   } else {
-    // Remove favorite card if quote is unfavorited
+    // Получаем все карточки избранных цитат.
     const favoriteCards = document.querySelectorAll('.favorite-card');
+
+    // Учебная проверка.
+    // Показывает NodeList со всеми найденными карточками.
+    console.log(favoriteCards);
+
     favoriteCards.forEach((card) => {
       if (card.textContent.includes(currentQuote.quote)) {
         card.remove();

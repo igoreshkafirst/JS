@@ -17,13 +17,11 @@ function generateRandomQuote() {
   toggleFavoriteBtn.textContent = randomQuote.isFavorite
     ? 'Remove from favorites'
     : 'Add to favorites';
-
-  toggleFavoriteBtn.style.display = 'inline-block';
 }
 
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
-  currentQuote.isFavorite = !currentQuote.isFavorite; // Toggle the favorite status
+  currentQuote.isFavorite = !currentQuote.isFavorite;
   toggleFavoriteBtn.textContent = currentQuote.isFavorite
     ? 'Remove from favorites'
     : 'Add to favorites';
@@ -49,3 +47,5 @@ function toggleFavorite() {
 
 generateBtn.addEventListener('click', generateRandomQuote);
 toggleFavoriteBtn.addEventListener('click', toggleFavorite);
+// Автоматическая генерация первой цитаты при загрузке страницы (Добавление обработчика избранных цитат)
+generateRandomQuote();

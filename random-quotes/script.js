@@ -14,6 +14,9 @@ function generateRandomQuote() {
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
+  toggleFavoriteBtn.textContent = randomQuote.isFavorite
+    ? 'Remove from favorites'
+    : 'Add to favorites';
 }
 
 function toggleFavorite() {

@@ -21,6 +21,24 @@ function toggleFavorite() {
   toggleFavoriteBtn.textContent = currentQuote.isFavorite
     ? 'Remove from favorites'
     : 'Add to favorites';
+
+  if (currentQuote.isFavorite) {
+    const favoriteCard = document.createElement('div');
+    favoriteCard.classList.add('favorite-card');
+    favoriteCard.innerHTML = `
+        <p>${currentQuote.quote}</p>
+        <p class="author">${currentQuote.author}</p>
+      `;
+    favoritesContainer.appendChild(favoriteCard);
+  } else {
+    // Remove favorite card if quote is unfavorited
+    const favoriteCards = document.querySelectorAll('.favorite-card');
+    favoriteCards.forEach((card) => {
+      if (card.textContent.includes(currentQuote.quote)) {
+        card.remove();
+      }
+    });
+  }
 }
 
 generateBtn.addEventListener('click', generateRandomQuote);

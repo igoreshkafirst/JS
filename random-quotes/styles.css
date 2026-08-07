@@ -23,7 +23,7 @@ body {
 .btn:hover {
   background-color: #0056b3;
 }
-/* Появление кнопки избранного начинается с этого момента */
+
 #toggle-favorite-btn {
   display: none;
 }
@@ -54,4 +54,10 @@ body {
 
 .author {
   font-style: italic;
+}
+
+.star-icon {
+  font-size: 30px;
+  color: yellow;
+  cursor: pointer;
 }

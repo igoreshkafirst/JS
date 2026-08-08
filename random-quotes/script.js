@@ -42,13 +42,14 @@ function hideFavoriteCard(quote) {
   console.log(favoriteCards instanceof NodeList);
   console.log(favoriteCards instanceof Object);
   console.log(favoriteCards instanceof Array);
-  const processFavoriteCard = (card) => {
+  function processFavoriteCard(card) {
     if (card.textContent.includes(quote)) {
       console.log(card);
       console.log(card.textContent);
       card.remove();
     }
-  };
+  }
+  // Передача функции в forEach
   favoriteCards.forEach(processFavoriteCard);
 }
 

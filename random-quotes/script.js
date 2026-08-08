@@ -14,17 +14,46 @@ function generateRandomQuote() {
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
-  toggleFavoriteBtn.textContent = randomQuote.isFavorite
-    ? 'Remove from favorites'
-    : 'Add to favorites';
+
+  // Переключение состояния иконки избранного через classList
+  /* Аналогичная логика будет добавлена в toggleFavorite()
+     для синхронизации иконки после изменения избранного состояния. */
+  if (randomQuote.isFavorite) {
+    toggleFavoriteBtn.classList.add('fa');
+    toggleFavoriteBtn.classList.remove('far');
+  } else {
+    toggleFavoriteBtn.classList.remove('fa');
+    toggleFavoriteBtn.classList.add('far');
+  }
+
+  // Примечание.
+  /* На этом этапе также была добавлена строка:
+   */
+  toggleFavoriteBtn.style.display = 'inline-block';
+  /*
+   Она отвечает только за первое отображение иконки избранного,
+   которая предварительно скрывается через
+   #toggle-favorite-btn { display: none; }.
+
+   В истории проекта она ошибочно удалена в коммите
+   «Скрытие кнопки избранного до выбора первой цитаты»,
+   чтобы не создавать отдельный технический коммит. */
 }
 
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
   currentQuote.isFavorite = !currentQuote.isFavorite;
-  toggleFavoriteBtn.textContent = currentQuote.isFavorite
-    ? 'Remove from favorites'
-    : 'Add to favorites';
+
+  // Повторяем логику переключения иконки,
+  /* поскольку здесь состояние избранного изменяется
+     для текущей цитаты. */
+  if (currentQuote.isFavorite) {
+    toggleFavoriteBtn.classList.add('fa');
+    toggleFavoriteBtn.classList.remove('far');
+  } else {
+    toggleFavoriteBtn.classList.remove('fa');
+    toggleFavoriteBtn.classList.add('far');
+  }
 
   if (currentQuote.isFavorite) {
     const favoriteCard = document.createElement('div');

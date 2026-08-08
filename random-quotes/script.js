@@ -25,12 +25,12 @@ function generateRandomQuote() {
   toggleFavoriteBtn.style.display = 'inline-block';
 }
 
-function showFavoriteCard() {
+function showFavoriteCard(quote, author) {
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
   favoriteCard.innerHTML = `
-        <p>${currentQuote.quote}</p>
-        <p class="author">${currentQuote.author}</p>
+        <p>${quote}</p>
+        <p class="author">${author}</p>
       `;
   favoritesContainer.appendChild(favoriteCard);
 }
@@ -42,7 +42,7 @@ function toggleFavorite() {
   toggleFavoriteIcon(currentQuote.isFavorite);
 
   if (currentQuote.isFavorite) {
-    showFavoriteCard();
+    showFavoriteCard(currentQuote.quote, currentQuote.author);
   } else {
     // Получаем все карточки избранных цитат.
     const favoriteCards = document.querySelectorAll('.favorite-card');

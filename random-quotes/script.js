@@ -35,6 +35,20 @@ function showFavoriteCard(quote, author) {
   favoritesContainer.appendChild(favoriteCard);
 }
 
+function hideFavoriteCard() {
+  const favoriteCards = document.querySelectorAll('.favorite-card');
+  console.log(favoriteCards);
+  console.log(typeof favoriteCards);
+  console.log(favoriteCards instanceof NodeList);
+  console.log(favoriteCards instanceof Object);
+  console.log(favoriteCards instanceof Array);
+  favoriteCards.forEach((card) => {
+    if (card.textContent.includes(currentQuote.quote)) {
+      card.remove();
+    }
+  });
+}
+
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
   currentQuote.isFavorite = !currentQuote.isFavorite;
@@ -44,13 +58,7 @@ function toggleFavorite() {
   if (currentQuote.isFavorite) {
     showFavoriteCard(currentQuote.quote, currentQuote.author);
   } else {
-    // Получаем все карточки избранных цитат.
-    const favoriteCards = document.querySelectorAll('.favorite-card');
-    favoriteCards.forEach((card) => {
-      if (card.textContent.includes(currentQuote.quote)) {
-        card.remove();
-      }
-    });
+    hideFavoriteCard();
   }
 }
 

@@ -35,7 +35,7 @@ function showFavoriteCard(quote, author) {
   favoritesContainer.appendChild(favoriteCard);
 }
 
-function hideFavoriteCard() {
+function hideFavoriteCard(quote) {
   const favoriteCards = document.querySelectorAll('.favorite-card');
   console.log(favoriteCards);
   console.log(typeof favoriteCards);
@@ -43,7 +43,7 @@ function hideFavoriteCard() {
   console.log(favoriteCards instanceof Object);
   console.log(favoriteCards instanceof Array);
   favoriteCards.forEach((card) => {
-    if (card.textContent.includes(currentQuote.quote)) {
+    if (card.textContent.includes(quote)) {
       card.remove();
     }
   });
@@ -58,7 +58,7 @@ function toggleFavorite() {
   if (currentQuote.isFavorite) {
     showFavoriteCard(currentQuote.quote, currentQuote.author);
   } else {
-    hideFavoriteCard();
+    hideFavoriteCard(currentQuote.quote);
   }
 }
 

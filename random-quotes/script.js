@@ -8,7 +8,6 @@ const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
 
-// 2. «Вынесение логики переключения иконки в отдельную функцию» v1.1.5
 function toggleFavoriteIcon(isFavorite) {
   toggleFavoriteBtn.classList.toggle('fa', isFavorite);
   toggleFavoriteBtn.classList.toggle('far', !isFavorite);
@@ -21,7 +20,6 @@ function generateRandomQuote() {
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
 
-  // 3. «Использование функции переключения иконки» v1.1.5
   toggleFavoriteIcon(randomQuote.isFavorite);
 
   toggleFavoriteBtn.style.display = 'inline-block';
@@ -44,13 +42,14 @@ function hideFavoriteCard(quote) {
   console.log(favoriteCards instanceof NodeList);
   console.log(favoriteCards instanceof Object);
   console.log(favoriteCards instanceof Array);
-  favoriteCards.forEach((card) => {
+  const processFavoriteCard = (card) => {
     if (card.textContent.includes(quote)) {
       console.log(card);
       console.log(card.textContent);
       card.remove();
     }
-  });
+  };
+  favoriteCards.forEach(processFavoriteCard);
 }
 
 function toggleFavorite() {

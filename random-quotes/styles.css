@@ -59,7 +59,6 @@ body {
 .star-icon {
   font-size: 30px;
   color: yellow;
-  /* 1. «Добавление вертикального выравнивания иконки» v1.1.5 */
   vertical-align: middle;
   cursor: pointer;
 }

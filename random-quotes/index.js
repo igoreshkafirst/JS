@@ -19,20 +19,21 @@ function generateRandomQuote() {
   const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
-
-  toggleFavoriteIcon(randomQuote.isFavorite);
-
+  toggleFavoriteIcon(randomQuote.isFavorite, toggleFavoriteBtn);
   toggleFavoriteBtn.style.display = 'inline-block';
 }
 
 function toggleFavorite() {
   const currentQuote = quotes[currentQuoteIndex];
   currentQuote.isFavorite = !currentQuote.isFavorite;
-
-  toggleFavoriteIcon(currentQuote.isFavorite);
+  toggleFavoriteIcon(currentQuote.isFavorite, toggleFavoriteBtn);
 
   if (currentQuote.isFavorite) {
-    showFavoriteCard(currentQuote.quote, currentQuote.author);
+    showFavoriteCard(
+      currentQuote.quote,
+      currentQuote.author,
+      favoritesContainer,
+    );
   } else {
     hideFavoriteCard(currentQuote.quote);
   }

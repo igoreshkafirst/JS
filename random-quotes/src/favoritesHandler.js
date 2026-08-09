@@ -1,16 +1,16 @@
-function toggleFavoriteIcon(isFavorite, toggleFavoriteBtn) {
-  toggleFavoriteBtn.classList.toggle('fa', isFavorite);
-  toggleFavoriteBtn.classList.toggle('far', !isFavorite);
+function toggleFavoriteIcon(isFavorite, el) {
+  el.classList.toggle('fa', isFavorite);
+  el.classList.toggle('far', !isFavorite);
 }
 
-function showFavoriteCard(quote, author, favoritesContainer) {
+function showFavoriteCard(quote, author, container) {
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
   favoriteCard.innerHTML = `
       <p>${quote}</p>
       <p class="author">${author}</p>
     `;
-  favoritesContainer.appendChild(favoriteCard);
+  container.appendChild(favoriteCard);
 }
 
 function hideFavoriteCard(quote) {
@@ -21,3 +21,5 @@ function hideFavoriteCard(quote) {
     }
   });
 }
+
+export { toggleFavoriteIcon, showFavoriteCard, hideFavoriteCard };

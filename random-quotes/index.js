@@ -1,4 +1,9 @@
 import quotes from './src/quotes.js';
+import {
+  toggleFavoriteIcon,
+  showFavoriteCard,
+  hideFavoriteCard,
+} from './src/favoritesHandler.js';
 
 const quoteElement = document.getElementById('quote');
 const quoteAuthorElement = document.getElementById('quote-author');

@@ -15,9 +15,8 @@ let currentQuoteIndex;
 
 function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
+  const { quote, author } = quotes[randomIndex];
   currentQuoteIndex = randomIndex;
-  const { quote, author } = randomQuote;
   quoteElement.textContent = quote;
   quoteAuthorElement.textContent = author;
   toggleFavoriteIcon(randomQuote.isFavorite, toggleFavoriteBtn);

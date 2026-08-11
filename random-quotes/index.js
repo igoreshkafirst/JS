@@ -15,7 +15,7 @@ const favoritesContainer = document.getElementById('favorites-container');
 let currentQuoteIndex;
 
 function generateRandomQuote() {
-  const randomIndex = generateRandomInt();
+  const randomIndex = generateRandomInt(quotes.length);
   const { quote, author } = quotes[randomIndex];
   currentQuoteIndex = randomIndex;
   quoteElement.textContent = quote;

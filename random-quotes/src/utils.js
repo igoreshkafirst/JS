@@ -1,5 +1,5 @@
-function generateRandomInt() {
-  return Math.floor(Math.random() * quotes.length);
+function generateRandomInt(maxInt) {
+  return Math.floor(Math.random() * maxInt);
 }
 
 export { generateRandomInt };

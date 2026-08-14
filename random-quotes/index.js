@@ -12,8 +12,6 @@ const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
 
-toggleFavoriteBtn.style.display = 'none';
-
 function displayQuote(quote) {
   const { text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
@@ -28,7 +26,6 @@ function choseRandomQuote() {
   currentQuoteIndex = randomIndex;
   return quotes[randomIndex];
 }
-toggleFavoriteBtn.style.display = 'inline-block';
 
 function generateAndDisplayRandomQuote() {
   const randomQuote = choseRandomQuote();

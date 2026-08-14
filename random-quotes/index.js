@@ -26,14 +26,14 @@ function displayQuote(quote) {
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
 }
 
-function choseRandomQuote() {
+function choseRandomQuote(quotes) {
   const randomIndex = generateRandomInt(quotes.length);
   currentQuoteIndex = randomIndex;
   return quotes[randomIndex];
 }
 
 function generateAndDisplayRandomQuote() {
-  const randomQuote = choseRandomQuote();
+  const randomQuote = choseRandomQuote(quotes);
   displayQuote(randomQuote);
 }
 

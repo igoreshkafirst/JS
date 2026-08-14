@@ -3,12 +3,12 @@ function toggleFavoriteIcon(isFavorite, el) {
   el.classList.toggle('far', !isFavorite);
 }
 
-function showToggleFavoriteBtn() {
-  toggleFavoriteBtn.style.display = 'inline-block';
+function showToggleFavoriteBtn(btn) {
+  btn.style.display = 'inline-block';
 }
 
-function hideToggleFavoriteBtn() {
-  toggleFavoriteBtn.style.display = 'none';
+function hideToggleFavoriteBtn(btn) {
+  btn.style.display = 'none';
 }
 
 function showFavoriteCard(quote, author, container) {

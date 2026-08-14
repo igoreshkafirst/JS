@@ -18,13 +18,13 @@ function showQuote(quote) {
   const quoteAuthorElement = document.getElementById('quote-author');
   quoteElement.textContent = text;
   quoteAuthorElement.textContent = author;
+  toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
 }
 
 function generateRandomQuote() {
   const randomIndex = generateRandomInt(quotes.length);
   const { quote, author, isFavorite } = quotes[randomIndex];
   currentQuoteIndex = randomIndex;
-  toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
   toggleFavoriteBtn.style.display = 'inline-block';
 }
 

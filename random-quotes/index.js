@@ -14,12 +14,15 @@ const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
 
+hideToggleFavoriteBtn(toggleFavoriteBtn);
+
 function displayQuote(quote) {
   const { text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
   const quoteAuthorElement = document.getElementById('quote-author');
   quoteElement.textContent = text;
   quoteAuthorElement.textContent = author;
+  showToggleFavoriteBtn(toggleFavoriteBtn);
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
 }
 

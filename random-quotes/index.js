@@ -15,14 +15,14 @@ let currentQuoteIndex;
 function showQuote(quote) {
   const quoteElement = document.getElementById('quote');
   const quoteAuthorElement = document.getElementById('quote-author');
+  quoteElement.textContent = quote;
+  quoteAuthorElement.textContent = author;
 }
 
 function generateRandomQuote() {
   const randomIndex = generateRandomInt(quotes.length);
   const { quote, author, isFavorite } = quotes[randomIndex];
   currentQuoteIndex = randomIndex;
-  quoteElement.textContent = quote;
-  quoteAuthorElement.textContent = author;
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
   toggleFavoriteBtn.style.display = 'inline-block';
 }

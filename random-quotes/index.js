@@ -23,8 +23,9 @@ function showQuote(quote) {
 
 function generateRandomQuote() {
   const randomIndex = generateRandomInt(quotes.length);
-  const { quote, author, isFavorite } = quotes[randomIndex];
   currentQuoteIndex = randomIndex;
+  return quotes[randomIndex];
+
   toggleFavoriteBtn.style.display = 'inline-block';
 }
 

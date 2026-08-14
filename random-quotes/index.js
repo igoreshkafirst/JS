@@ -1,4 +1,4 @@
-import quotes from './src/data/quotes.js';
+import quotes from './src/quotes.js';
 import { generateRandomInt } from './src/utils.js';
 import {
   toggleFavoriteIcon,
@@ -13,9 +13,10 @@ const favoritesContainer = document.getElementById('favorites-container');
 let currentQuoteIndex;
 
 function showQuote(quote) {
+  const { text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
   const quoteAuthorElement = document.getElementById('quote-author');
-  quoteElement.textContent = quote;
+  quoteElement.textContent = text;
   quoteAuthorElement.textContent = author;
 }
 

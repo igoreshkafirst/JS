@@ -2,6 +2,8 @@ import quotes from './src/quotes.js';
 import { generateRandomInt } from './src/utils.js';
 import {
   toggleFavoriteIcon,
+  hideToggleFavoriteBtn,
+  showToggleFavoriteBtn,
   showFavoriteCard,
   hideFavoriteCard,
 } from './src/favoritesHandler.js';

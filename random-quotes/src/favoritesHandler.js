@@ -30,4 +30,10 @@ function hideFavoriteCard(quote) {
   });
 }
 
-export { toggleFavoriteIcon, showFavoriteCard, hideFavoriteCard };
+export {
+  toggleFavoriteIcon,
+  showToggleFavoriteBtn,
+  hideToggleFavoriteBtn,
+  showFavoriteCard,
+  hideFavoriteCard,
+};

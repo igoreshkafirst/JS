@@ -12,7 +12,7 @@ const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
 
-function showQuote(quote) {
+function displayQuote(quote) {
   const { text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
   const quoteAuthorElement = document.getElementById('quote-author');
@@ -21,12 +21,17 @@ function showQuote(quote) {
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
 }
 
-function generateRandomQuote() {
+function choseRandomQuote() {
   const randomIndex = generateRandomInt(quotes.length);
   currentQuoteIndex = randomIndex;
-  return quotes[randomIndex];
+  const randomQuote = quotes[randomIndex];
+  return randomQuote;
+}
+toggleFavoriteBtn.style.display = 'inline-block';
 
-  toggleFavoriteBtn.style.display = 'inline-block';
+function generateAndDisplayRandomQuote() {
+  const randomQuote = choseRandomQuote();
+  displayQuote(randomQuote);
 }
 
 function toggleFavorite() {
@@ -45,5 +50,5 @@ function toggleFavorite() {
   }
 }
 
-generateBtn.addEventListener('click', generateRandomQuote);
+generateBtn.addEventListener('click', generateAndDisplayRandomQuote);
 toggleFavoriteBtn.addEventListener('click', toggleFavorite);

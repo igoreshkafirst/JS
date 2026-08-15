@@ -1,11 +1,11 @@
-const toggleFavoriteBtn = document.getElementById('toggle-favorite-btn');
-toggleFavoriteBtn.addEventListener('click', toggleFavorite);
+const toggleBtn = document.getElementById('toggle-favorite-btn');
+toggleBtn.addEventListener('click', toggleFavorite);
 
-hideToggleFavoriteBtn(toggleFavoriteBtn);
+hideBtn(toggleBtn);
 
-function handleFavoriteBtn(isFavorite) {
-  showToggleFavoriteBtn(toggleFavoriteBtn);
-  toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
+function handleFavorite(isFavorite) {
+  showBtn(toggleBtn);
+  toggleFavoriteIcon(isFavorite, toggleBtn);
 }
 
 function toggleFavoriteIcon(isFavorite, el) {
@@ -13,11 +13,11 @@ function toggleFavoriteIcon(isFavorite, el) {
   el.classList.toggle('far', !isFavorite);
 }
 
-function showToggleFavoriteBtn(btn) {
+function showBtn(btn) {
   btn.style.display = 'inline-block';
 }
 
-function hideToggleFavoriteBtn(btn) {
+function hideBtn(btn) {
   btn.style.display = 'none';
 }
 
@@ -41,7 +41,7 @@ function hideFavoriteCard(text) {
 }
 
 export {
-  handleFavoriteBtn,
+  handleFavorite,
   toggleFavoriteIcon,
   showFavoriteCard,
   hideFavoriteCard,

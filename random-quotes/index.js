@@ -1,7 +1,7 @@
 import quotes from './src/quotes.js';
 import { generateRandomInt } from './src/utils.js';
 import {
-  handleFavoriteBtn,
+  handleFavorite,
   toggleFavoriteIcon,
   showFavoriteCard,
   hideFavoriteCard,
@@ -18,7 +18,7 @@ function displayQuote(quote) {
   const quoteAuthorElement = document.getElementById('quote-author');
   quoteElement.textContent = text;
   quoteAuthorElement.textContent = author;
-  handleFavoriteBtn(isFavorite);
+  handleFavorite(isFavorite);
 }
 
 function choseRandomQuote(quotes) {

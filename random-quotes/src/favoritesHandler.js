@@ -1,3 +1,8 @@
+function handleFavoriteBtn(isFavorite) {
+  showToggleFavoriteBtn(toggleFavoriteBtn);
+  toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
+}
+
 function toggleFavoriteIcon(isFavorite, el) {
   el.classList.toggle('fa', isFavorite);
   el.classList.toggle('far', !isFavorite);
@@ -31,6 +36,7 @@ function hideFavoriteCard(text) {
 }
 
 export {
+  handleFavoriteBtn,
   toggleFavoriteIcon,
   showToggleFavoriteBtn,
   hideToggleFavoriteBtn,

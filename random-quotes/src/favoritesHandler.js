@@ -1,7 +1,25 @@
+import { currentQuote } from '../index.js';
+
+const favoritesContainer = document.getElementById('favorites-container');
 const toggleBtn = document.getElementById('toggle-favorite-btn');
 toggleBtn.addEventListener('click', toggleFavorite);
 
 hideBtn(toggleBtn);
+
+function toggleFavorite() {
+  currentQuote.isFavorite = !currentQuote.isFavorite;
+  toggleFavoriteIcon(currentQuote.isFavorite, toggleFavoriteBtn);
+
+  if (currentQuote.isFavorite) {
+    showFavoriteCard(
+      currentQuote.text,
+      currentQuote.author,
+      favoritesContainer,
+    );
+  } else {
+    hideFavoriteCard(currentQuote.text);
+  }
+}
 
 function handleFavorite(isFavorite) {
   showBtn(toggleBtn);
@@ -40,9 +58,4 @@ function hideFavoriteCard(text) {
   });
 }
 
-export {
-  handleFavorite,
-  toggleFavoriteIcon,
-  showFavoriteCard,
-  hideFavoriteCard,
-};
+export { handleFavorite };

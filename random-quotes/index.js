@@ -3,19 +3,14 @@ import { generateRandomInt } from './src/utils.js';
 import {
   handleFavoriteBtn,
   toggleFavoriteIcon,
-  hideToggleFavoriteBtn,
-  showToggleFavoriteBtn,
   showFavoriteCard,
   hideFavoriteCard,
 } from './src/favoritesHandler.js';
 
 const generateBtn = document.getElementById('generate-btn');
-const toggleFavoriteBtn = document.getElementById('toggle-favorite-btn');
 const favoritesContainer = document.getElementById('favorites-container');
 
 let currentQuoteIndex;
-
-hideToggleFavoriteBtn(toggleFavoriteBtn);
 
 function displayQuote(quote) {
   const { text, author, isFavorite } = quote;
@@ -54,4 +49,3 @@ function toggleFavorite() {
 }
 
 generateBtn.addEventListener('click', generateAndDisplayRandomQuote);
-toggleFavoriteBtn.addEventListener('click', toggleFavorite);

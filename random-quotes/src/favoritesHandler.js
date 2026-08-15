@@ -1,3 +1,8 @@
+const toggleFavoriteBtn = document.getElementById('toggle-favorite-btn');
+toggleFavoriteBtn.addEventListener('click', toggleFavorite);
+
+hideToggleFavoriteBtn(toggleFavoriteBtn);
+
 function handleFavoriteBtn(isFavorite) {
   showToggleFavoriteBtn(toggleFavoriteBtn);
   toggleFavoriteIcon(isFavorite, toggleFavoriteBtn);
@@ -38,8 +43,6 @@ function hideFavoriteCard(text) {
 export {
   handleFavoriteBtn,
   toggleFavoriteIcon,
-  showToggleFavoriteBtn,
-  hideToggleFavoriteBtn,
   showFavoriteCard,
   hideFavoriteCard,
 };

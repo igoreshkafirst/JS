@@ -4,7 +4,6 @@ import { handleFavorite } from './src/favoritesHandler.js';
 
 const generateBtn = document.getElementById('generate-btn');
 
-let currentQuoteIndex;
 let currentQuote = null;
 
 function displayQuote(quote) {
@@ -18,7 +17,6 @@ function displayQuote(quote) {
 
 function choseRandomQuote(quotes) {
   const randomIndex = generateRandomInt(quotes.length);
-  currentQuoteIndex = randomIndex;
   return quotes[randomIndex];
 }
 

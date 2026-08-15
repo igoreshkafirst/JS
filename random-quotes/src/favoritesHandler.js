@@ -8,7 +8,7 @@ hideBtn(toggleBtn);
 
 function toggleFavorite() {
   currentQuote.isFavorite = !currentQuote.isFavorite;
-  toggleFavoriteIcon(currentQuote.isFavorite, toggleFavoriteBtn);
+  toggleFavoriteIcon(currentQuote.isFavorite, toggleBtn);
 
   if (currentQuote.isFavorite) {
     showFavoriteCard(

@@ -44,12 +44,12 @@ function toggleFavorite() {
 
   if (currentQuote.isFavorite) {
     showFavoriteCard(
-      currentQuote.quote,
+      currentQuote.text,
       currentQuote.author,
       favoritesContainer,
     );
   } else {
-    hideFavoriteCard(currentQuote.quote);
+    hideFavoriteCard(currentQuote.text);
   }
 }
 

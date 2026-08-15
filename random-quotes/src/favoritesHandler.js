@@ -11,20 +11,20 @@ function hideToggleFavoriteBtn(btn) {
   btn.style.display = 'none';
 }
 
-function showFavoriteCard(quote, author, container) {
+function showFavoriteCard(text, author, container) {
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
   favoriteCard.innerHTML = `
-      <p>${quote}</p>
+      <p>${text}</p>
       <p class="author">${author}</p>
     `;
   container.appendChild(favoriteCard);
 }
 
-function hideFavoriteCard(quote) {
+function hideFavoriteCard(text) {
   const favoriteCards = document.querySelectorAll('.favorite-card');
   favoriteCards.forEach((card) => {
-    if (card.textContent.includes(quote)) {
+    if (card.textContent.includes(text)) {
       card.remove();
     }
   });

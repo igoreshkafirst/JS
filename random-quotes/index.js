@@ -1,4 +1,4 @@
-import { handleQuote } from './src/quotesHandler.js';
+import { handleQuote } from './src/handlers/quote.js';
 
 const generateBtn = document.getElementById('generate-btn');
 generateBtn.addEventListener('click', handleQuote);

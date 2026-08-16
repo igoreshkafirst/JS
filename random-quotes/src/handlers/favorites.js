@@ -1,4 +1,4 @@
-import { currentQuote } from './quotesHandler.js';
+import { currentQuote } from './quote.js';
 
 const favoritesContainer = document.getElementById('favorites-container');
 const toggleBtn = document.getElementById('toggle-favorite-btn');

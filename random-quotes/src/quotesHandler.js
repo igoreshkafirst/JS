@@ -4,7 +4,7 @@ import { handleFavorite } from './favoritesHandler.js';
 
 let currentQuote = null;
 
-function generateAndDisplayRandomQuote() {
+function handleQuote() {
   const randomQuote = choseRandomQuote(quotes);
   currentQuote = randomQuote;
   displayQuote(randomQuote);
@@ -24,4 +24,4 @@ function choseRandomQuote(quotes) {
   return quotes[randomIndex];
 }
 
-export { generateAndDisplayRandomQuote, currentQuote };
+export { handleQuote, currentQuote };

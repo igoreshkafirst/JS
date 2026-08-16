@@ -1,4 +1,4 @@
-import { generateAndDisplayRandomQuote } from './src/quotesHandler.js';
+import { handleQuote } from './src/quotesHandler.js';
 
 const generateBtn = document.getElementById('generate-btn');
-generateBtn.addEventListener('click', generateAndDisplayRandomQuote);
+generateBtn.addEventListener('click', handleQuote);

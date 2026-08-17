@@ -2,8 +2,6 @@ import quotes from '../data/quotes.js';
 import { generateRandomInt } from '../utils.js';
 import { handleFavorite } from './favorites.js';
 
-let currentQuote = null;
-
 function handleQuote(quotes) {
   const randomQuote = choseRandomQuote(quotes);
   currentQuote = randomQuote;
@@ -24,4 +22,4 @@ function choseRandomQuote(quotes) {
   return quotes[randomIndex];
 }
 
-export { handleQuote, currentQuote };
+export { handleQuote };

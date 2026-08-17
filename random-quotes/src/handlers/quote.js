@@ -1,7 +1,7 @@
 import { generateRandomInt } from '../utils.js';
 import { handleFavorite } from './favorites.js';
 
-function handleQuote(quotes) {
+function handleQuote(quotes, currentQuote) {
   const randomQuote = choseRandomQuote(quotes);
   currentQuote = randomQuote;
   displayQuote(randomQuote);

@@ -4,7 +4,7 @@ import { handleFavorite } from './favorites.js';
 
 let currentQuote = null;
 
-function handleQuote() {
+function handleQuote(quotes) {
   const randomQuote = choseRandomQuote(quotes);
   currentQuote = randomQuote;
   displayQuote(randomQuote);

@@ -1,9 +1,10 @@
 import { generateRandomInt } from '../utils.js';
 import { handleFavorite } from './favorites.js';
 
-function handleQuote(quotes, currentQuote) {
+function handleQuote(quotes, setCurrentQuote) {
+  console.log(quotes);
   const randomQuote = choseRandomQuote(quotes);
-  currentQuote = randomQuote;
+  setCurrentQuote(randomQuote);
   displayQuote(randomQuote);
 }
 

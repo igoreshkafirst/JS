@@ -4,6 +4,7 @@ import { handleQuote } from './src/handlers/quote.js';
 let currentQuote = null;
 
 function setCurrentQuote(quote) {
+  console.log(quote);
   currentQuote = quote;
 }
 

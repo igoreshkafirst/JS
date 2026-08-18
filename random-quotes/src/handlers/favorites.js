@@ -6,14 +6,14 @@ toggleBtn.addEventListener('click', toggleFavorite);
 
 hideBtn(toggleBtn);
 
-function toggleFavorite() {
-  currentQuote.isFavorite = !currentQuote.isFavorite;
-  toggleFavoriteIcon(currentQuote.isFavorite, toggleBtn);
+function toggleFavorite(quote) {
+  quote.isFavorite = !quote.isFavorite;
+  toggleFavoriteIcon(quote.isFavorite, toggleBtn);
 
-  if (currentQuote.isFavorite) {
+  if (quote.isFavorite) {
     showFavoriteCard(
-      currentQuote.text,
-      currentQuote.author,
+      quote.text,
+      quote.author,
       favoritesContainer,
     );
   } else {

@@ -8,10 +8,11 @@ hideBtn(toggleBtn);
 
 function toggleFavorite(quote) {
   quote.isFavorite = !quote.isFavorite;
-  toggleFavoriteIcon(quote.isFavorite, toggleBtn);
+  const { text, author, isFavorite } = quote;
+  toggleFavoriteIcon(isFavorite, toggleBtn);
 
-  if (quote.isFavorite) {
-    showFavoriteCard(quote.text, quote.author, favoritesContainer);
+  if (isFavorite) {
+    showFavoriteCard(text, author, favoritesContainer);
   } else {
     hideFavoriteCard(currentQuote.text);
   }

@@ -9,7 +9,7 @@ hideBtn(toggleBtn);
 function toggleFavorite(quote) {
   quote.isFavorite = !quote.isFavorite;
   const { text, author, isFavorite } = quote;
-  toggleFavoriteIcon(isFavorite, toggleBtn);
+  toggleFavoriteBtnIcon(isFavorite, toggleBtn);
 
   if (isFavorite) {
     showFavoriteCard(text, author, favoritesContainer);
@@ -20,10 +20,10 @@ function toggleFavorite(quote) {
 
 function handleFavorite(isFavorite) {
   showBtn(toggleBtn);
-  toggleFavoriteIcon(isFavorite, toggleBtn);
+  toggleFavoriteBtnIcon(isFavorite, toggleBtn);
 }
 
-function toggleFavoriteIcon(isFavorite, el) {
+function toggleFavoriteBtnIcon(isFavorite, el) {
   el.classList.toggle('fa', isFavorite);
   el.classList.toggle('far', !isFavorite);
 }

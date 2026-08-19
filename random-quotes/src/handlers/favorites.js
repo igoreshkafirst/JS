@@ -16,7 +16,7 @@ function toggleFavorite(quote, btn, container) {
   if (isFavorite) {
     showFavoriteCard(text, author, container);
   } else {
-    hideFavoriteCard(currentQuote.text);
+    hideFavoriteCard(text);
   }
 }
 

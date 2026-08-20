@@ -10,13 +10,12 @@ hideBtn(favoriteBtn);
 
 function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
-  const { id, text, author, isFavorite } = quote;
-  toggleFavoriteBtnIcon(isFavorite, btn);
+  toggleFavoriteBtnIcon(quote.isFavorite, btn);
 
-  if (isFavorite) {
-    showFavoriteCard(id, text, author, container);
+  if (quote.isFavorite) {
+    showFavoriteCard(quote, container);
   } else {
-    hideFavoriteCard(id);
+    hideFavoriteCard(quote.id);
   }
 }
 
@@ -38,7 +37,8 @@ function hideBtn(btn) {
   btn.style.display = 'none';
 }
 
-function showFavoriteCard(id, text, author, container) {
+function showFavoriteCard(quote, container) {
+  const { id, text, author } = quote;
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
   favoriteCard.dataset.quoteId = id; // Set the data attribute
@@ -51,8 +51,7 @@ function showFavoriteCard(id, text, author, container) {
 
 function hideFavoriteCard(id) {
   const card = document.querySelector(`.favorite-card[data-quote-id="${id}"]`);
-  console.log(card);
-  if (card) card.remove();
+  if (card) card.remove(); // альтернатива "card && card.remove()"
 }
 
 export { handleFavorite };

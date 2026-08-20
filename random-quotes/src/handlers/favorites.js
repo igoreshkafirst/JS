@@ -49,13 +49,10 @@ function showFavoriteCard(id, text, author, container) {
   container.appendChild(favoriteCard);
 }
 
-function hideFavoriteCard(text) {
-  const favoriteCards = document.querySelectorAll('.favorite-card');
-  favoriteCards.forEach((card) => {
-    if (card.textContent.includes(text)) {
-      card.remove();
-    }
-  });
+function hideFavoriteCard(id) {
+  const card = document.querySelector(`.favorite-card[data-quote-id="${id}"]`);
+  console.log(card);
+  if (card) card.remove();
 }
 
 export { handleFavorite };

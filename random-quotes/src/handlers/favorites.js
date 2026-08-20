@@ -10,13 +10,13 @@ hideBtn(favoriteBtn);
 
 function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
-  const { text, author, isFavorite } = quote;
+  const { id, text, author, isFavorite } = quote;
   toggleFavoriteBtnIcon(isFavorite, btn);
 
   if (isFavorite) {
-    showFavoriteCard(text, author, container);
+    showFavoriteCard(id, text, author, container);
   } else {
-    hideFavoriteCard(text);
+    hideFavoriteCard(id);
   }
 }
 
@@ -38,9 +38,10 @@ function hideBtn(btn) {
   btn.style.display = 'none';
 }
 
-function showFavoriteCard(text, author, container) {
+function showFavoriteCard(id, text, author, container) {
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
+  favoriteCard.dataset.quoteId = id; // Set the data attribute
   favoriteCard.innerHTML = `
       <p>${text}</p>
       <p class="author">${author}</p>

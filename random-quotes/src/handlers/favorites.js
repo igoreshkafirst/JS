@@ -1,14 +1,13 @@
 import { favoriteBtn } from '../../index.js';
 
-function toggleFavorite(quote, btn, container) {
+function toggleFavorite({ quote, btn, container }) {
   quote.isFavorite = !quote.isFavorite;
-  const { id, isFavorite } = quote;
-  toggleFavoriteBtnIcon(isFavorite, btn);
+  toggleFavoriteBtnIcon(quote.isFavorite, btn);
 
-  if (isFavorite) {
+  if (quote.isFavorite) {
     showFavoriteCard(quote, container);
   } else {
-    hideFavoriteCard(id);
+    hideFavoriteCard(quote.id);
   }
 }
 

@@ -12,7 +12,11 @@ const favoritesContainer = document.getElementById('favorites-container');
 const favoriteBtn = document.getElementById('favorite-btn');
 hideFavoriteBtn(favoriteBtn);
 favoriteBtn.addEventListener('click', () =>
-  toggleFavorite(currentQuote, favoriteBtn, favoritesContainer),
+  toggleFavorite({
+    quote: currentQuote,
+    btn: favoriteBtn,
+    container: favoritesContainer,
+  }),
 );
 
 const generateBtn = document.getElementById('generate-btn');

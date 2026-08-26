@@ -16,9 +16,9 @@ function handleFavorite(isFavorite) {
   toggleFavoriteBtnIcon(isFavorite, favoriteBtn);
 }
 
-function toggleFavoriteBtnIcon(isFavorite, el) {
-  el.classList.toggle('fa', isFavorite);
-  el.classList.toggle('far', !isFavorite);
+function toggleFavoriteBtnIcon(isFavorite) {
+  favoriteBtn.classList.toggle('fa', isFavorite);
+  favoriteBtn.classList.toggle('far', !isFavorite);
 }
 
 function showFavoriteBtn(btn) {

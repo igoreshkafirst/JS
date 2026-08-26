@@ -37,6 +37,11 @@ body {
   border: 2px solid red; /* Red border */
 }
 
+.btn-danger::hover {
+  background-color: red;
+  color: white;
+}
+
 .quote {
   font-style: italic;
 }

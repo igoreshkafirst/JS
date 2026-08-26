@@ -48,9 +48,7 @@ function showFavoriteCard(quote, container) {
   const removeButton = favoriteCard.querySelector('.btn-danger');
 
   removeButton.addEventListener('click', () => {
-    // Handle the click event here
-    console.log('Remove button clicked for quote with ID:', id);
-    // You can perform additional actions here, such as removing the card from the DOM or updating its state
+    hideFavoriteCard(id);
   });
 }
 

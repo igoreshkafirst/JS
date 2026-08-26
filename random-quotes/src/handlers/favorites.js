@@ -48,6 +48,7 @@ function showFavoriteCard(quote, container) {
   const removeButton = favoriteCard.querySelector('.btn-danger');
 
   removeButton.addEventListener('click', () => {
+    quote.isFavorite = false;
     hideFavoriteCard(id);
   });
 }

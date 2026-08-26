@@ -12,7 +12,7 @@ function toggleFavorite(quote, btn, container) {
 }
 
 function handleFavorite(isFavorite) {
-  showFavoriteBtn(favoriteBtn);
+  showFavoriteBtn();
   toggleFavoriteBtnIcon(isFavorite, favoriteBtn);
 }
 
@@ -21,12 +21,12 @@ function toggleFavoriteBtnIcon(isFavorite) {
   favoriteBtn.classList.toggle('far', !isFavorite);
 }
 
-function showFavoriteBtn(btn) {
-  btn.style.display = 'inline-block';
+function showFavoriteBtn() {
+  favoriteBtn.style.display = 'inline-block';
 }
 
-function hideFavoriteBtn(btn) {
-  btn.style.display = 'none';
+function hideFavoriteBtn() {
+  favoriteBtn.style.display = 'none';
 }
 
 function showFavoriteCard(quote, container) {

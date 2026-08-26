@@ -4,9 +4,11 @@ function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
   toggleFavoriteBtnIcon(quote.isFavorite, btn);
 
-  quote.isFavorite
-    ? showFavoriteCard(quote, container)
-    : hideFavoriteCard(quote.id);
+  if (quote.isFavorite) {
+    showFavoriteCard(quote, container);
+  } else {
+    hideFavoriteCard(quote.id);
+  }
 }
 
 function handleFavorite(isFavorite) {
@@ -37,6 +39,7 @@ function showFavoriteCard(quote, container) {
   favoriteCard.innerHTML = `
       <p>${text}</p>
       <p class="author">${author}</p>
+      <button>Remove from favorites</button>
     `;
   container.appendChild(favoriteCard);
 }

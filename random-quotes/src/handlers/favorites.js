@@ -39,7 +39,7 @@ function showFavoriteCard(quote, container) {
   favoriteCard.innerHTML = `
       <p>${text}</p>
       <p class="author">${author}</p>
-      <button>Remove from favorites</button>
+      <button class="btn btn-danger">Remove from favorites</button>
     `;
   container.appendChild(favoriteCard);
 }

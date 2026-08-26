@@ -37,8 +37,10 @@ function showFavoriteCard(quote, container) {
   favoriteCard.dataset.quoteId = id; // Set the data attribute
 
   favoriteCard.innerHTML = `
-      <p>${text}</p>
-      <p class="author">${author}</p>
+      <div class="favorite-card-content">
+        <p>${text}</p>
+        <p class="author">${author}</p>
+      </div>
       <button class="btn btn-danger">Remove from favorites</button>
     `;
   container.appendChild(favoriteCard);

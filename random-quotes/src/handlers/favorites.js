@@ -7,7 +7,7 @@ function toggleFavorite(quote, btn, container) {
   if (quote.isFavorite) {
     showFavoriteCard(quote, container);
   } else {
-    hideFavoriteCard(quote.id);
+    removeFavoriteCard(quote.id);
   }
 }
 
@@ -47,7 +47,7 @@ function showFavoriteCard(quote, container) {
 
   function removeFavoriteQuote() {
     quote.isFavorite = !quote.isFavorite;
-    hideFavoriteCard(id);
+    removeFavoriteCard(id);
 
     const currentQuote = document.querySelector('[data-current-quote-id]');
 
@@ -63,7 +63,7 @@ function showFavoriteCard(quote, container) {
   removeButton.addEventListener('click', removeFavoriteQuote);
 }
 
-function hideFavoriteCard(id) {
+function removeFavoriteCard(id) {
   const card = document.querySelector(`.favorite-card[data-quote-id="${id}"]`);
   if (card) card.remove(); // альтернатива "card && card.remove()"
 }

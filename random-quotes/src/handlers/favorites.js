@@ -1,4 +1,4 @@
-import { favoriteBtn } from '../../index.js';
+import { quoteFavoriteBtn } from '../../index.js';
 
 function toggleFavorite(quote, btn, container) {
   quote.isFavorite = !quote.isFavorite;
@@ -13,20 +13,20 @@ function toggleFavorite(quote, btn, container) {
 
 function handleFavorite(isFavorite) {
   showFavoriteBtn();
-  toggleFavoriteBtnIcon(isFavorite, favoriteBtn);
+  toggleFavoriteBtnIcon(isFavorite, quoteFavoriteBtn);
 }
 
 function toggleFavoriteBtnIcon(isFavorite) {
-  favoriteBtn.classList.toggle('fa', isFavorite);
-  favoriteBtn.classList.toggle('far', !isFavorite);
+  quoteFavoriteBtn.classList.toggle('fa', isFavorite);
+  quoteFavoriteBtn.classList.toggle('far', !isFavorite);
 }
 
 function showFavoriteBtn() {
-  favoriteBtn.style.display = 'inline-block';
+  quoteFavoriteBtn.style.display = 'inline-block';
 }
 
 function hideFavoriteBtn() {
-  favoriteBtn.style.display = 'none';
+  quoteFavoriteBtn.style.display = 'none';
 }
 
 function showFavoriteCard(quote, container) {

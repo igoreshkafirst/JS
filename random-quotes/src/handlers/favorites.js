@@ -45,7 +45,7 @@ function showFavoriteCard(quote, container) {
     `;
   container.appendChild(favoriteCard);
 
-  function removeFavoriteQuote() {
+  function removeFavoriteQuote(quote) {
     quote.isFavorite = false;
     removeFavoriteCard(id);
 
@@ -60,7 +60,7 @@ function showFavoriteCard(quote, container) {
 
   const removeButton = favoriteCard.querySelector('.btn-danger');
 
-  removeButton.addEventListener('click', removeFavoriteQuote);
+  removeButton.addEventListener('click', () => removeFavoriteQuote(quote));
 }
 
 function removeFavoriteCard(id) {

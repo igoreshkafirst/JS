@@ -51,16 +51,10 @@ function showFavoriteCard(quote, container) {
     quote.isFavorite = !quote.isFavorite;
     hideFavoriteCard(id);
 
-    const currentQuote = document.querySelector('[data-current-quote-id]');
-
-    // Временная проверка: преподаватель проверяет найденный DOM-элемент текущей цитаты.
-    console.log(currentQuote);
-    // Временная проверка: преподаватель проверяет data-атрибуты текущей цитаты.
-    console.log(currentQuote.dataset);
-
-    const currentQuoteId = currentQuote.dataset.currentQuoteId;
-
-    if (id === currentQuoteId) {
+    if (
+      id ===
+      document.querySelector('[data-current-quote-id]').dataset.currentQuoteId
+    ) {
       toggleFavoriteBtnIcon(quote.isFavorite);
     }
   });

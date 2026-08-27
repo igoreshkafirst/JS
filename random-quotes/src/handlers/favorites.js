@@ -29,6 +29,19 @@ function hideFavoriteBtn() {
   quoteFavoriteBtn.style.display = 'none';
 }
 
+function removeFavoriteQuote(quote) {
+  quote.isFavorite = false;
+  removeFavoriteCard(id);
+
+  const currentQuote = document.querySelector('[data-current-quote-id]');
+
+  const currentQuoteId = currentQuote.dataset.currentQuoteId;
+
+  if (id === currentQuoteId) {
+    toggleFavoriteBtnIcon(true);
+  }
+}
+
 function showFavoriteCard(quote, container) {
   const { id, text, author } = quote;
 
@@ -44,19 +57,6 @@ function showFavoriteCard(quote, container) {
       <button class="btn btn-danger">Remove from favorites</button>
     `;
   container.appendChild(favoriteCard);
-
-  function removeFavoriteQuote(quote) {
-    quote.isFavorite = false;
-    removeFavoriteCard(id);
-
-    const currentQuote = document.querySelector('[data-current-quote-id]');
-
-    const currentQuoteId = currentQuote.dataset.currentQuoteId;
-
-    if (id === currentQuoteId) {
-      toggleFavoriteBtnIcon(true);
-    }
-  }
 
   const removeButton = favoriteCard.querySelector('.btn-danger');
 

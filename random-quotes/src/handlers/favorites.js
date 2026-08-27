@@ -46,7 +46,7 @@ function showFavoriteCard(quote, container) {
   container.appendChild(favoriteCard);
 
   function removeFavoriteQuote() {
-    quote.isFavorite = !quote.isFavorite;
+    quote.isFavorite = false;
     removeFavoriteCard(id);
 
     const currentQuote = document.querySelector('[data-current-quote-id]');
@@ -54,7 +54,7 @@ function showFavoriteCard(quote, container) {
     const currentQuoteId = currentQuote.dataset.currentQuoteId;
 
     if (id === currentQuoteId) {
-      toggleFavoriteBtnIcon(quote.isFavorite);
+      toggleFavoriteBtnIcon(true);
     }
   }
 

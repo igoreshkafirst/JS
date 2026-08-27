@@ -50,7 +50,19 @@ function showFavoriteCard(quote, container) {
   removeButton.addEventListener('click', () => {
     quote.isFavorite = !quote.isFavorite;
     hideFavoriteCard(id);
-    toggleFavoriteBtnIcon(quote.isFavorite);
+
+    const currentQuote = document.querySelector('[data-current-quote-id]');
+
+    // Временная проверка: преподаватель проверяет найденный DOM-элемент текущей цитаты.
+    console.log(currentQuote);
+    // Временная проверка: преподаватель проверяет data-атрибуты текущей цитаты.
+    console.log(currentQuote.dataset);
+
+    const currentQuoteId = currentQuote.dataset.currentQuoteId;
+
+    if (id === currentQuoteId) {
+      toggleFavoriteBtnIcon(quote.isFavorite);
+    }
   });
 }
 

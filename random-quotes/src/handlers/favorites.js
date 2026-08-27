@@ -50,6 +50,7 @@ function showFavoriteCard(quote, container) {
   removeButton.addEventListener('click', () => {
     quote.isFavorite = false;
     hideFavoriteCard(id);
+    toggleFavoriteBtnIcon(quote.isFavorite);
   });
 }
 

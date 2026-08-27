@@ -45,19 +45,22 @@ function showFavoriteCard(quote, container) {
     `;
   container.appendChild(favoriteCard);
 
-  const removeButton = favoriteCard.querySelector('.btn-danger');
-
-  removeButton.addEventListener('click', () => {
+  function removeFavoriteQuote() {
     quote.isFavorite = !quote.isFavorite;
     hideFavoriteCard(id);
 
-    if (
-      id ===
-      document.querySelector('[data-current-quote-id]').dataset.currentQuoteId
-    ) {
+    const currentQuote = document.querySelector('[data-current-quote-id]');
+
+    const currentQuoteId = currentQuote.dataset.currentQuoteId;
+
+    if (id === currentQuoteId) {
       toggleFavoriteBtnIcon(quote.isFavorite);
     }
-  });
+  }
+
+  const removeButton = favoriteCard.querySelector('.btn-danger');
+
+  removeButton.addEventListener('click', removeFavoriteQuote);
 }
 
 function hideFavoriteCard(id) {

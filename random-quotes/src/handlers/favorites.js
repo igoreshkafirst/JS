@@ -33,7 +33,7 @@ function removeFavoriteQuote(quote) {
   quote.isFavorite = false;
   removeFavoriteCard(quote.id);
 
-  const currentQuote = document.querySelector('.quote[data-current-quote-id]');
+  const currentQuote = document.querySelector('[data-current-quote-id]');
 
   const currentQuoteId = currentQuote.dataset.currentQuoteId;
 
@@ -47,7 +47,8 @@ function showFavoriteCard(quote, container) {
 
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
-  favoriteCard.dataset.quoteId = id; // Set the data attribute
+  // Each favorite quote card will have data-favorite-quote-id HTML attribute
+  favoriteCard.dataset.favoriteQuoteId = id;
 
   favoriteCard.innerHTML = `
       <div class="favorite-card-content">

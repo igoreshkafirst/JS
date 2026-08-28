@@ -31,14 +31,14 @@ function hideFavoriteBtn() {
 
 function removeFavoriteQuote(quote) {
   quote.isFavorite = false;
-  removeFavoriteCard(id);
+  removeFavoriteCard(quote.id);
 
   const currentQuote = document.querySelector('[data-current-quote-id]');
 
   const currentQuoteId = currentQuote.dataset.currentQuoteId;
 
-  if (id === currentQuoteId) {
-    toggleFavoriteBtnIcon(true);
+  if (quote.id === currentQuoteId) {
+    toggleFavoriteBtnIcon(quote.isFavorite);
   }
 }
 

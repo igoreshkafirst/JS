@@ -55,7 +55,10 @@ function showFavoriteCard(quote, container) {
         <p>${text}</p>
         <p class="author">${author}</p>
       </div>
-      <button class="btn btn-danger">Remove from favorites</button>
+      <button class="btn btn-danger">
+        Remove from favorites
+        <i class="far fa-trash-alt"></i>
+      </button>
     `;
   container.appendChild(favoriteCard);
 

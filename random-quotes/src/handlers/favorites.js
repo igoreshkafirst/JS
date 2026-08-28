@@ -65,7 +65,9 @@ function showFavoriteCard(quote, container) {
 }
 
 function removeFavoriteCard(id) {
-  const card = document.querySelector(`.favorite-card[data-quote-id="${id}"]`);
+  const card = document.querySelector(
+    `.favorite-card[data-favorite-quote-id="${id}"]`,
+  );
   if (card) card.remove(); // альтернатива "card && card.remove()"
 }
 

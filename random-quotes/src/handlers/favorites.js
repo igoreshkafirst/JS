@@ -33,7 +33,7 @@ function removeFavoriteQuote(quote) {
   quote.isFavorite = false;
   removeFavoriteCard(quote.id);
 
-  const currentQuote = document.querySelector('[data-current-quote-id]');
+  const currentQuote = document.querySelector('.quote[data-current-quote-id]');
 
   const currentQuoteId = currentQuote.dataset.currentQuoteId;
 

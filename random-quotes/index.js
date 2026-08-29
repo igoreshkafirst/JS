@@ -10,7 +10,7 @@ function setCurrentQuote(quote) {
 
 const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
-hideFavoriteBtn(quoteFavoriteBtn);
+hideFavoriteBtn();
 quoteFavoriteBtn.addEventListener('click', () =>
   toggleFavorite(currentQuote, quoteFavoriteBtn, favoritesContainer),
 );

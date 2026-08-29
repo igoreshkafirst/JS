@@ -13,7 +13,7 @@ function toggleFavorite(quote, btn, container) {
 
 function handleFavorite(isFavorite) {
   showFavoriteBtn();
-  toggleFavoriteBtnIcon(isFavorite, quoteFavoriteBtn);
+  toggleFavoriteBtnIcon(isFavorite);
 }
 
 function toggleFavoriteBtnIcon(isFavorite) {
@@ -32,11 +32,8 @@ function hideFavoriteBtn() {
 function removeFavoriteQuote(quote) {
   quote.isFavorite = false;
   removeFavoriteCard(quote.id);
-
   const currentQuote = document.querySelector('[data-current-quote-id]');
-
   const currentQuoteId = currentQuote.dataset.currentQuoteId;
-
   if (quote.id === currentQuoteId) {
     toggleFavoriteBtnIcon(quote.isFavorite);
   }
@@ -44,12 +41,10 @@ function removeFavoriteQuote(quote) {
 
 function showFavoriteCard(quote, container) {
   const { id, text, author } = quote;
-
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
   // Each favorite quote card will have data-favorite-quote-id HTML attribute
   favoriteCard.dataset.favoriteQuoteId = id;
-
   favoriteCard.innerHTML = `
       <div class="favorite-card-content">
         <p>${text}</p>
@@ -61,15 +56,13 @@ function showFavoriteCard(quote, container) {
       </button>
     `;
   container.appendChild(favoriteCard);
-
   const removeButton = favoriteCard.querySelector('.btn-danger');
-
   removeButton.addEventListener('click', () => removeFavoriteQuote(quote));
 }
 
 function removeFavoriteCard(id) {
   const card = document.querySelector(`[data-favorite-quote-id="${id}"]`);
-  if (card) card.remove(); // альтернатива "card && card.remove()"
+  if (card) card.remove();
 }
 
 export { handleFavorite, toggleFavorite, hideFavoriteBtn };

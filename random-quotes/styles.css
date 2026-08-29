@@ -42,14 +42,18 @@ body {
   color: white;
 }
 
-.quote {
+.quote-text {
   font-size: 1.2em;
   font-style: italic;
 }
 
-.quote::before,
-.quote::after {
+.quote-text::before,
+.quote-text::after {
   content: '"';
+}
+
+.quote-author {
+  font-size: 1.4em;
 }
 
 .favorites-container {

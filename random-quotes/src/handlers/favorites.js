@@ -53,7 +53,7 @@ function showFavoriteCard(quote, container) {
   favoriteCard.innerHTML = `
       <div class="favorite-card-content">
         <p>${text}</p>
-        <p class="author">${author}</p>
+        <p class="favorite-card-author">${author}</p>
       </div>
       <button class="btn btn-danger">
         Remove from favorites

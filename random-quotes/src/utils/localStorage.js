@@ -32,11 +32,7 @@ function removeItem(key) {
 
 // Function to clear all items from localStorage
 function clear() {
-  try {
-    localStorage.clear();
-  } catch (error) {
-    console.error('Error clearing localStorage:', error);
-  }
+  localStorage.clear();
 }
 
 export { setItem, getItem, removeItem, clear };

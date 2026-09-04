@@ -25,6 +25,8 @@ function init() {
 
     const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
 
+    quote.isFavorite = currentQuoteFromStorage.isFavorite;
+
     currentQuote = quote;
   }
 }

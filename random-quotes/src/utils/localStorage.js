@@ -16,10 +16,9 @@ function setItem(key, value) {
 }
 
 function getItem(key) {
-  let value;
+  const value = localStorage.getItem(key);
 
   try {
-    value = localStorage.getItem(key);
     return value ? JSON.parse(value) : null;
   } catch (error) {
     return value;

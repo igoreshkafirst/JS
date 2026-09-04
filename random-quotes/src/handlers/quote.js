@@ -24,4 +24,4 @@ function choseRandomQuote(quotes) {
   return quotes[randomIndex];
 }
 
-export { handleQuote };
+export { handleQuote, displayQuote };

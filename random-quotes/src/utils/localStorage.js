@@ -1,7 +1,8 @@
 function setItem(key, value) {
   // Check if key is a string
   if (typeof key !== 'string') {
-    throw new Error('Error: Key must be a string');
+    console.error('Error: Key must be a string');
+    return;
   }
 
   try {

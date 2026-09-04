@@ -21,8 +21,10 @@ function init() {
   const currentQuoteFromStorage = localStorageGetItem('currentQuote');
 
   if (currentQuoteFromStorage) {
+    displayQuote(currentQuoteFromStorage);
+
     const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
-    displayQuote(quote);
+
     currentQuote = quote;
   }
 }

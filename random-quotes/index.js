@@ -13,6 +13,16 @@ function setCurrentQuote(quote) {
   localStorageSetItem('currentQuote', quote);
 }
 
+function init() {
+  const currentQuoteFromStorage = localStorageGetItem('currentQuote');
+
+  if (currentQuoteFromStorage) {
+    // show current quote
+    displayQuote(currentQuoteFromStorage);
+    currentQuote = currentQuoteFromStorage;
+  }
+}
+
 window.addEventListener('load', init);
 
 const favoritesContainer = document.getElementById('favorites-container');

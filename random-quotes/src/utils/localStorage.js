@@ -19,7 +19,7 @@ function getItem(key) {
   const value = localStorage.getItem(key);
 
   try {
-    return value ? JSON.parse(value) : null;
+    return JSON.parse(value);
   } catch (error) {
     return value;
   }

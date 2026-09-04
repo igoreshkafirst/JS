@@ -1,38 +1,36 @@
-function setItem(key, value) {
-  // Check if key is a string
+function localStorageSetItem(key, value) {
   if (typeof key !== 'string') {
     console.error('Error: Key must be a string');
     return;
   }
-
   try {
-    // Convert value to JSON string
     const jsonValue = JSON.stringify(value);
-    // Set item in localStorage
     localStorage.setItem(key, jsonValue);
   } catch (error) {
     console.error('Error setting item in localStorage:', error);
   }
 }
 
-function getItem(key) {
+function localStorageGetItem(key) {
   const value = localStorage.getItem(key);
-
   try {
     return JSON.parse(value);
-  } catch (error) {
+  } catch {
     return value;
   }
 }
 
-// Function to remove an item from localStorage
-function removeItem(key) {
+function localStorageRemoveItem(key) {
   localStorage.removeItem(key);
 }
 
-// Function to clear all items from localStorage
-function clear() {
+function localStorageClear() {
   localStorage.clear();
 }
 
-export { setItem, getItem, removeItem, clear };
+export {
+  localStorageSetItem,
+  localStorageGetItem,
+  localStorageRemoveItem,
+  localStorageClear,
+};

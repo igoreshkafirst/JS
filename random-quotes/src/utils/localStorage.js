@@ -16,12 +16,13 @@ function setItem(key, value) {
 }
 
 function getItem(key) {
+  let value;
+
   try {
-    const value = localStorage.getItem(key);
+    value = localStorage.getItem(key);
     return value ? JSON.parse(value) : null;
   } catch (error) {
-    console.error('Error getting item from localStorage:', error);
-    return null;
+    return value;
   }
 }
 

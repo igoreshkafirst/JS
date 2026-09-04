@@ -27,11 +27,7 @@ function getItem(key) {
 
 // Function to remove an item from localStorage
 function removeItem(key) {
-  try {
-    localStorage.removeItem(key);
-  } catch (error) {
-    console.error('Error removing item from localStorage:', error);
-  }
+  localStorage.removeItem(key);
 }
 
 // Function to clear all items from localStorage

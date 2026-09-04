@@ -1,6 +1,10 @@
 import quotes from './src/data/quotes.js';
 import { toggleFavorite, hideFavoriteBtn } from './src/handlers/favorites.js';
-import { handleQuote, displayQuote } from './src/handlers/quote.js';
+import {
+  handleQuote,
+  displayQuote,
+  findQuoteById,
+} from './src/handlers/quote.js';
 import {
   localStorageSetItem,
   localStorageGetItem,

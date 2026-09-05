@@ -16,6 +16,10 @@ const favoriteQuotes = [];
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   if (shouldToggleIsFavorite) {
     quote.isFavorite = !quote.isFavorite;
+    // Change local storage favoriteQuotes
+    if (quote.isFavorite) {
+      favoriteQuotes.push(quote);
+    }
   }
 
   currentQuote = quote;

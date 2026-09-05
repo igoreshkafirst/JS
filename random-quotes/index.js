@@ -12,7 +12,11 @@ import {
 
 let currentQuote = null;
 
-function setCurrentQuote(quote) {
+function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
+  if (shouldToggleIsFavorite) {
+    quote.isFavorite = !quote.isFavorite;
+  }
+
   currentQuote = quote;
   localStorageSetItem('currentQuote', quote);
 }

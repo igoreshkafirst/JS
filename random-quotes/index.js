@@ -18,7 +18,7 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
     quote.isFavorite = !quote.isFavorite;
     // Change local storage favoriteQuotes
     if (quote.isFavorite) {
-      favoriteQuotes.push(quote);
+      favoriteQuotes.push(Object.assign({}, quote));
     }
   }
 

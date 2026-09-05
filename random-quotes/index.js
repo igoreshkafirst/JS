@@ -16,20 +16,25 @@ const favoriteQuotes = [];
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   if (shouldToggleIsFavorite) {
     quote.isFavorite = !quote.isFavorite;
+
     // Change local storage favoriteQuotes
     if (quote.isFavorite) {
       favoriteQuotes.push({ ...quote });
     } else {
-      const index = quotes.findIndex((quote) => quote.id === id);
+      const index = favoriteQuotes.findIndex(
+        (favoriteQuote) => favoriteQuote.id === quote.id,
+      );
 
       if (index !== -1) {
-        quotes.splice(index, 1);
+        favoriteQuotes.splice(index, 1);
       }
     }
+
+    localStorageSetItem('favoriteQuotes', favoriteQuotes);
   }
 
   currentQuote = quote;
-  localStorageSetItem('currentQuote', quote);
+  localStorageSetItem('currentQuote', currentQuote);
 }
 
 function init() {

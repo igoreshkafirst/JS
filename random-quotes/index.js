@@ -11,6 +11,7 @@ import {
 } from './src/utils/localStorage.js';
 
 let currentQuote = null;
+const favoriteQuotes = [];
 
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   if (shouldToggleIsFavorite) {

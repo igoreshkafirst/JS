@@ -18,7 +18,13 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
     quote.isFavorite = !quote.isFavorite;
     // Change local storage favoriteQuotes
     if (quote.isFavorite) {
-      favoriteQuotes.push(Object.assign({}, quote));
+      favoriteQuotes.push({ ...quote });
+    } else {
+      const index = quotes.findIndex((quote) => quote.id === id);
+
+      if (index !== -1) {
+        quotes.splice(index, 1);
+      }
     }
   }
 

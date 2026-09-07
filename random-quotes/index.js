@@ -58,7 +58,7 @@ quoteFavoriteBtn.addEventListener('click', () =>
 
 const generateBtn = document.getElementById('generate-btn');
 generateBtn.addEventListener('click', () =>
-  handleQuote(quotes, setCurrentQuote),
+  handleQuote(quotes, favoriteQuotes, setCurrentQuote),
 );
 
 function init() {

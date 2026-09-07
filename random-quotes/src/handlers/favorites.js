@@ -6,7 +6,7 @@ function toggleFavorite(quote, setCurrentQuote, btn, container) {
   toggleFavoriteBtnIcon(quote.isFavorite, btn);
 
   if (quote.isFavorite) {
-    showFavoriteCard(quote, container);
+    showFavoriteCard(quote, setCurrentQuote, container);
   } else {
     removeFavoriteCard(quote.id);
   }
@@ -40,7 +40,7 @@ function removeFavoriteQuote(quote) {
   }
 }
 
-function showFavoriteCard(quote, container) {
+function showFavoriteCard(quote, setCurrentQuote, container) {
   const { id, text, author } = quote;
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');
@@ -58,7 +58,9 @@ function showFavoriteCard(quote, container) {
     `;
   container.appendChild(favoriteCard);
   const removeButton = favoriteCard.querySelector('.btn-danger');
-  removeButton.addEventListener('click', () => removeFavoriteQuote(quote));
+  removeButton.addEventListener('click', () =>
+    removeFavoriteQuote(quote, setCurrentQuote),
+  );
 }
 
 function removeFavoriteCard(id) {

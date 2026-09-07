@@ -77,10 +77,8 @@ function init() {
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
   favoriteQuotesFromStorage.forEach((quote) => {
     favoriteQuotes.push(quote);
-    showFavoriteCard(quote, favoritesContainer);
+    showFavoriteCard(quote, setCurrentQuote, favoritesContainer);
   });
-
-  console.log(favoriteQuotes);
 }
 
 window.addEventListener('load', init);

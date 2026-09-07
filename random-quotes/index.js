@@ -76,8 +76,11 @@ function init() {
 
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
   favoriteQuotesFromStorage.forEach((quote) => {
+    favoriteQuotes.push(quote);
     showFavoriteCard(quote, favoritesContainer);
   });
+
+  console.log(favoriteQuotes);
 }
 
 window.addEventListener('load', init);

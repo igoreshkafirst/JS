@@ -14,6 +14,9 @@ import {
   localStorageGetItem,
 } from './src/utils/localStorage.js';
 
+const CURRENT_QUOTE_KEY = 'currentQuote';
+const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
+
 let currentQuote = null;
 const favoriteQuotes = [];
 
@@ -34,15 +37,15 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
       }
     }
 
-    localStorageSetItem('favoriteQuotes', favoriteQuotes);
+    localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
 
   currentQuote = quote;
-  localStorageSetItem('currentQuote', currentQuote);
+  localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
 
 function init() {
-  const currentQuoteFromStorage = localStorageGetItem('currentQuote');
+  const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
 
   if (currentQuoteFromStorage) {
     displayQuote(currentQuoteFromStorage);

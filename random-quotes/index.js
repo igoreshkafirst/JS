@@ -75,10 +75,13 @@ function init() {
   }
 
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
-  favoriteQuotesFromStorage.forEach((quote) => {
-    favoriteQuotes.push(quote);
-    showFavoriteCard(quote, setCurrentQuote, favoritesContainer);
-  });
+
+  if (favoriteQuotesFromStorage) {
+    favoriteQuotesFromStorage.forEach((quote) => {
+      favoriteQuotes.push(quote);
+      showFavoriteCard(quote, setCurrentQuote, favoritesContainer);
+    });
+  }
 }
 
 window.addEventListener('load', init);

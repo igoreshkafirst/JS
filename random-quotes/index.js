@@ -1,5 +1,9 @@
 import quotes from './src/data/quotes.js';
-import { toggleFavorite, hideFavoriteBtn } from './src/handlers/favorites.js';
+import {
+  toggleFavorite,
+  hideFavoriteBtn,
+  showFavoriteCard,
+} from './src/handlers/favorites.js';
 import {
   handleQuote,
   displayQuote,

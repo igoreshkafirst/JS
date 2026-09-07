@@ -66,4 +66,4 @@ function removeFavoriteCard(id) {
   if (card) card.remove();
 }
 
-export { handleFavorite, toggleFavorite, hideFavoriteBtn };
+export { handleFavorite, toggleFavorite, hideFavoriteBtn, showFavoriteCard };

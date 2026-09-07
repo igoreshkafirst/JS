@@ -44,22 +44,6 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
 
-function init() {
-  const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
-
-  if (currentQuoteFromStorage) {
-    displayQuote(currentQuoteFromStorage);
-
-    const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
-
-    quote.isFavorite = currentQuoteFromStorage.isFavorite;
-
-    currentQuote = quote;
-  }
-}
-
-window.addEventListener('load', init);
-
 const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
@@ -76,5 +60,21 @@ const generateBtn = document.getElementById('generate-btn');
 generateBtn.addEventListener('click', () =>
   handleQuote(quotes, setCurrentQuote),
 );
+
+function init() {
+  const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
+
+  if (currentQuoteFromStorage) {
+    displayQuote(currentQuoteFromStorage);
+
+    const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
+
+    quote.isFavorite = currentQuoteFromStorage.isFavorite;
+
+    currentQuote = quote;
+  }
+}
+
+window.addEventListener('load', init);
 
 export { quoteFavoriteBtn };

@@ -30,8 +30,9 @@ function hideFavoriteBtn() {
   quoteFavoriteBtn.style.display = 'none';
 }
 
-function removeFavoriteQuote(quote) {
-  quote.isFavorite = false;
+function removeFavoriteQuote(quote /* setCurrentQuote удалено*/) {
+  const shouldToggleIsFavorite = true;
+  setCurrentQuote(quote, shouldToggleIsFavorite);
   removeFavoriteCard(quote.id);
   const currentQuote = document.querySelector('[data-current-quote-id]');
   const currentQuoteId = currentQuote.dataset.currentQuoteId;

@@ -73,6 +73,11 @@ function init() {
 
     currentQuote = quote;
   }
+
+  const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
+  favoriteQuotesFromStorage.forEach((quote) => {
+    showFavoriteCard(quote);
+  });
 }
 
 window.addEventListener('load', init);

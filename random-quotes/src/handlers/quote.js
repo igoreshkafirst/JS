@@ -5,7 +5,9 @@ function handleQuote(quotes, favoriteQuotes, setCurrentQuote) {
   const randomQuote = choseRandomQuote(quotes);
 
   // Check if id of randomQuote is among ids of the favorite quotes
-  favoriteQuotes.find((quote) => quote.id === randomQuote.id);
+  if (favoriteQuotes.find((quote) => quote.id === randomQuote.id)) {
+    randomQuote.isFavorite = true;
+  }
 
   setCurrentQuote(randomQuote);
   displayQuote(randomQuote);

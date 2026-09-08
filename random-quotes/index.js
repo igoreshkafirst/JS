@@ -1,4 +1,3 @@
-import quotes from './src/data/quotes.js';
 import {
   toggleFavorite,
   hideFavoriteBtn,
@@ -13,6 +12,7 @@ import {
   localStorageSetItem,
   localStorageGetItem,
 } from './src/utils/localStorage.js';
+import { getRandomQuote } from './src/handlers/randomQuote.js';
 
 const CURRENT_QUOTE_KEY = 'currentQuote';
 const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
@@ -23,23 +23,18 @@ const favoriteQuotes = [];
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   if (shouldToggleIsFavorite) {
     quote.isFavorite = !quote.isFavorite;
-
-    // Change local storage favoriteQuotes
     if (quote.isFavorite) {
       favoriteQuotes.push({ ...quote });
     } else {
       const index = favoriteQuotes.findIndex(
         (favoriteQuote) => favoriteQuote.id === quote.id,
       );
-
       if (index !== -1) {
         favoriteQuotes.splice(index, 1);
       }
     }
-
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
-
   currentQuote = quote;
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
@@ -56,26 +51,22 @@ quoteFavoriteBtn.addEventListener('click', () =>
   ),
 );
 
-const generateBtn = document.getElementById('generate-btn');
-generateBtn.addEventListener('click', () =>
-  handleQuote(quotes, favoriteQuotes, setCurrentQuote),
-);
+const randomQuoteBtn = document.getElementById('random-quote-btn');
+randomQuoteBtn.addEventListener('click', () => {
+  const randomQuote = getRandomQuote(); // expecting new random quote { id, text, author }
+  setCurrentQuote(randomQuote);
+});
 
 function init() {
   const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
-
   if (currentQuoteFromStorage) {
     displayQuote(currentQuoteFromStorage);
-
     const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
-
     quote.isFavorite = currentQuoteFromStorage.isFavorite;
-
     currentQuote = quote;
   }
 
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
-
   if (favoriteQuotesFromStorage) {
     favoriteQuotesFromStorage.forEach((quote) => {
       favoriteQuotes.push(quote);

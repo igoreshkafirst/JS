@@ -3,11 +3,7 @@ import {
   hideFavoriteBtn,
   showFavoriteCard,
 } from './src/handlers/favorites.js';
-import {
-  handleQuote,
-  displayQuote,
-  findQuoteById,
-} from './src/handlers/quote.js';
+import { displayQuote, findQuoteById } from './src/handlers/quote.js';
 import {
   localStorageSetItem,
   localStorageGetItem,
@@ -21,6 +17,8 @@ let currentQuote = null;
 const favoriteQuotes = [];
 
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
+  currentQuote = quote;
+
   if (shouldToggleIsFavorite) {
     quote.isFavorite = !quote.isFavorite;
     if (quote.isFavorite) {
@@ -35,7 +33,7 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
     }
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
-  currentQuote = quote;
+
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
 

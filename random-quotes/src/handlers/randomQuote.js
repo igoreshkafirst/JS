@@ -1,13 +1,10 @@
 import quotes from '../data/quotes.js';
-
-function choseRandomQuote(quotes) {
-  const randomIndex = generateRandomInt(quotes.length);
-  return { ...quotes[randomIndex] };
-}
+import { generateRandomInt } from '../utils/math.js';
 
 function getRandomQuote() {
-  // Return random quote
-  const randomQuote = choseRandomQuote(quotes);
+  const randomIndex = generateRandomInt(quotes.length);
+  const randomQuote = { ...quotes[randomIndex] };
+  return randomQuote;
 }
 
 export { getRandomQuote };

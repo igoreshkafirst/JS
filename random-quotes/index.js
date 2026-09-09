@@ -39,6 +39,9 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
       }
     }
 
+    // Show current quote in the UI
+    displayQuote(currentQuote);
+
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
 

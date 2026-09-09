@@ -21,6 +21,12 @@ function setCurrentQuote({
   isNew = false,
   shouldToggleIsFavorite = false,
 }) {
+  if (!quote) {
+    // New random quote is received
+  } else {
+    // Toggle isFavorite
+  }
+
   // Change app state and write copy of the quote to the current quote
   currentQuote = quote;
 

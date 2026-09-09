@@ -42,13 +42,15 @@ function setCurrentQuote({
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 
   if (shouldToggleIsFavorite) {
-    quote.isFavorite = !quote.isFavorite;
-    if (quote.isFavorite) {
-      favoriteQuotes.push({ ...quote });
+    currentQuote.isFavorite = !currentQuote.isFavorite;
+
+    if (currentQuote.isFavorite) {
+      favoriteQuotes.push({ ...currentQuote });
     } else {
       const index = favoriteQuotes.findIndex(
-        (favoriteQuote) => favoriteQuote.id === quote.id,
+        (favoriteQuote) => favoriteQuote.id === currentQuote.id,
       );
+
       if (index !== -1) {
         favoriteQuotes.splice(index, 1);
       }

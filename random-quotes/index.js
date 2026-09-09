@@ -16,7 +16,11 @@ const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
 let currentQuote = null;
 const favoriteQuotes = [];
 
-function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
+function setCurrentQuote({
+  quote,
+  isNew = false,
+  shouldToggleIsFavorite = false,
+}) {
   // Change app state and write copy of the quote to the current quote
   currentQuote = quote;
 
@@ -51,7 +55,7 @@ const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
 quoteFavoriteBtn.addEventListener('click', () => {
-  currentQuote.isFavorite = !currentQuote.isFavorite;
+  setCurrentQuote(currentQuote, true);
 
   toggleFavorite(
     currentQuote,
@@ -64,7 +68,10 @@ quoteFavoriteBtn.addEventListener('click', () => {
 const randomQuoteBtn = document.getElementById('random-quote-btn');
 // expecting new random quote { id, text, author }
 randomQuoteBtn.addEventListener('click', () =>
-  setCurrentQuote(getRandomQuote()),
+  setCurrentQuote({
+    quote: getRandomQuote(),
+    isNew: true,
+  }),
 );
 
 function init() {

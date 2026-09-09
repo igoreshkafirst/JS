@@ -19,18 +19,26 @@ const favoriteQuotes = [];
 function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   currentQuote = quote;
 
+  // Check if id of the current quote is among favorite quotes and set isFavorite
+  currentQuote.isFavorite = !!favoriteQuotes.find(
+    (quote) => quote.id === currentQuote.id,
+  );
+
   if (shouldToggleIsFavorite) {
     quote.isFavorite = !quote.isFavorite;
+
     if (quote.isFavorite) {
       favoriteQuotes.push({ ...quote });
     } else {
       const index = favoriteQuotes.findIndex(
         (favoriteQuote) => favoriteQuote.id === quote.id,
       );
+
       if (index !== -1) {
         favoriteQuotes.splice(index, 1);
       }
     }
+
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
 

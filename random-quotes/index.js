@@ -16,7 +16,7 @@ const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
 let currentQuote = null;
 const favoriteQuotes = [];
 
-function setCurrentQuote(quote) {
+function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
   // Change app state and write copy of the quote to the current quote
   currentQuote = quote;
 
@@ -30,19 +30,36 @@ function setCurrentQuote(quote) {
 
   // Save current quote in the local storage
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
+
+  if (shouldToggleIsFavorite) {
+    quote.isFavorite = !quote.isFavorite;
+    if (quote.isFavorite) {
+      favoriteQuotes.push({ ...quote });
+    } else {
+      const index = favoriteQuotes.findIndex(
+        (favoriteQuote) => favoriteQuote.id === quote.id,
+      );
+      if (index !== -1) {
+        favoriteQuotes.splice(index, 1);
+      }
+    }
+    localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
+  }
 }
 
 const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
-quoteFavoriteBtn.addEventListener('click', () =>
+quoteFavoriteBtn.addEventListener('click', () => {
+  currentQuote.isFavorite = !currentQuote.isFavorite;
+
   toggleFavorite(
     currentQuote,
     setCurrentQuote,
     quoteFavoriteBtn,
     favoritesContainer,
-  ),
-);
+  );
+});
 
 const randomQuoteBtn = document.getElementById('random-quote-btn');
 // expecting new random quote { id, text, author }

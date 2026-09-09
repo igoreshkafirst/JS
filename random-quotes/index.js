@@ -66,13 +66,12 @@ function setCurrentQuote({
     if (currentQuote.isFavorite) {
       favoriteQuotes.push({ ...currentQuote });
     } else {
-      const index = favoriteQuotes.findIndex(
-        (favoriteQuote) => favoriteQuote.id === currentQuote.id,
+      favoriteQuotes.splice(
+        favoriteQuotes.findIndex(
+          (favoriteQuote) => favoriteQuote.id === currentQuote.id,
+        ),
+        1,
       );
-
-      if (index !== -1) {
-        favoriteQuotes.splice(index, 1);
-      }
     }
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }

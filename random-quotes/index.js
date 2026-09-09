@@ -21,10 +21,29 @@ function setCurrentQuote({
   isNew = false,
   shouldToggleIsFavorite = false,
 }) {
-  if (!quote) {
-    // New random quote is received
-  } else {
-    // Toggle isFavorite
+  if (isNew) {
+    // NEW RANDOM QUOTE
+    // Change app state and write copy of the quote to the current quote
+    currentQuote = quote;
+
+    // Check if id of the current quote is among favorite quotes and set isFavorite
+    currentQuote.isFavorite = !!favoriteQuotes.find(
+      (favoriteQuote) => favoriteQuote.id === currentQuote.id,
+    );
+
+    // Show current quote in the UI
+    displayQuote(currentQuote);
+
+    // Save current quote in the local storage
+    localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
+  } else if (shouldToggleIsFavorite) {
+    // CURRENT QUOTE UPDATE
+    // Sync app state and toggle isFavorite of the current quote
+    currentQuote.isFavorite = !currentQuote.isFavorite;
+    // Update UI by toggling favorite Icon (no need to display again current quote)
+    toggleFavoriteBtnIcon(currentQuote.isFavorite);
+    // Save current quote in the local storage
+    localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
   }
 
   // Change app state and write copy of the quote to the current quote

@@ -32,7 +32,7 @@ function setCurrentQuote({
 
   // Check if id of the current quote is among favorite quotes and set isFavorite
   currentQuote.isFavorite = !!favoriteQuotes.find(
-    (quote) => quote.id === currentQuote.id,
+    (favoriteQuote) => favoriteQuote.id === currentQuote.id,
   );
 
   // Show current quote in the UI

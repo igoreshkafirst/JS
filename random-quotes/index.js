@@ -16,7 +16,8 @@ const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
 let currentQuote = null;
 const favoriteQuotes = [];
 
-function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
+function setCurrentQuote(quote) {
+  // Change app state and write copy of the quote to the current quote
   currentQuote = quote;
 
   // Check if id of the current quote is among favorite quotes and set isFavorite
@@ -24,27 +25,10 @@ function setCurrentQuote(quote, shouldToggleIsFavorite = false) {
     (quote) => quote.id === currentQuote.id,
   );
 
-  if (shouldToggleIsFavorite) {
-    quote.isFavorite = !quote.isFavorite;
+  // Show current quote in the UI
+  displayQuote(currentQuote);
 
-    if (quote.isFavorite) {
-      favoriteQuotes.push({ ...quote });
-    } else {
-      const index = favoriteQuotes.findIndex(
-        (favoriteQuote) => favoriteQuote.id === quote.id,
-      );
-
-      if (index !== -1) {
-        favoriteQuotes.splice(index, 1);
-      }
-    }
-
-    // Show current quote in the UI
-    displayQuote(currentQuote);
-
-    localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
-  }
-
+  // Save current quote in the local storage
   localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
 
@@ -61,10 +45,10 @@ quoteFavoriteBtn.addEventListener('click', () =>
 );
 
 const randomQuoteBtn = document.getElementById('random-quote-btn');
-randomQuoteBtn.addEventListener('click', () => {
-  const randomQuote = getRandomQuote(); // expecting new random quote { id, text, author }
-  setCurrentQuote(randomQuote);
-});
+// expecting new random quote { id, text, author }
+randomQuoteBtn.addEventListener('click', () =>
+  setCurrentQuote(getRandomQuote()),
+);
 
 function init() {
   const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);

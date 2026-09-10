@@ -1,5 +1,4 @@
 import {
-  toggleFavorite,
   hideFavoriteBtn,
   showFavoriteCard,
   toggleFavoriteBtnIcon,
@@ -58,9 +57,6 @@ function setCurrentQuote({
         1,
       );
     }
-
-    // Update UI by adding or removing favorite card
-    toggleFavoriteCard(currentQuote, setCurrentQuote, favoritesContainer);
 
     // Save favorite quotes in the local storage
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);

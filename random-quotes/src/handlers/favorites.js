@@ -1,8 +1,8 @@
 import { quoteFavoriteBtn } from '../../index.js';
 
-function toggleFavoriteCard(quote, container) {
+function toggleFavoriteCard(quote, setCurrentQuote, container) {
   quote.isFavorite
-    ? showFavoriteCard(quote, container)
+    ? showFavoriteCard(quote, setCurrentQuote, container)
     : removeFavoriteCard(quote.id);
 }
 

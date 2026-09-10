@@ -3,6 +3,7 @@ import {
   hideFavoriteBtn,
   showFavoriteCard,
   toggleFavoriteBtnIcon,
+  toggleFavoriteCard,
 } from './src/handlers/favorites.js';
 import { displayQuote, findQuoteById } from './src/handlers/quote.js';
 import {
@@ -43,6 +44,7 @@ function setCurrentQuote({
     currentQuote.isFavorite = !currentQuote.isFavorite;
     // Update UI by toggling favorite Icon (no need to display again current quote)
     toggleFavoriteBtnIcon(currentQuote.isFavorite);
+
     // Save current quote in the local storage
     localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 
@@ -56,7 +58,9 @@ function setCurrentQuote({
         1,
       );
     }
-    // Update UI by showing favorite card or removing favorite card
+
+    // Update UI by adding or removing favorite card
+    toggleFavoriteCard(currentQuote, setCurrentQuote, favoritesContainer);
 
     // Save favorite quotes in the local storage
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
@@ -68,13 +72,6 @@ const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
 quoteFavoriteBtn.addEventListener('click', () => {
   setCurrentQuote(currentQuote, true);
-
-  toggleFavorite(
-    currentQuote,
-    setCurrentQuote,
-    quoteFavoriteBtn,
-    favoritesContainer,
-  );
 });
 
 const randomQuoteBtn = document.getElementById('random-quote-btn');

@@ -9,7 +9,6 @@ function toggleFavoriteCard(quote, container) {
 }
 
 function handleFavorite(isFavorite) {
-  showFavoriteBtn();
   toggleFavoriteBtnIcon(isFavorite);
 }
 

@@ -44,35 +44,20 @@ function setCurrentQuote({
     toggleFavoriteBtnIcon(currentQuote.isFavorite);
     // Save current quote in the local storage
     localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
-  }
 
-  // Change app state and write copy of the quote to the current quote
-  currentQuote = quote;
-
-  // Check if id of the current quote is among favorite quotes and set isFavorite
-  currentQuote.isFavorite = !!favoriteQuotes.find(
-    (favoriteQuote) => favoriteQuote.id === currentQuote.id,
-  );
-
-  // Show current quote in the UI
-  displayQuote(currentQuote);
-
-  // Save current quote in the local storage
-  localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
-
-  if (shouldToggleIsFavorite) {
-    currentQuote.isFavorite = !currentQuote.isFavorite;
-
+    // FAVORITE QUOTES UPDATE
+    // Sync app state and update favoriteQuotes array
     if (currentQuote.isFavorite) {
       favoriteQuotes.push({ ...currentQuote });
     } else {
       favoriteQuotes.splice(
-        favoriteQuotes.findIndex(
-          (favoriteQuote) => favoriteQuote.id === currentQuote.id,
-        ),
+        favoriteQuotes.findIndex((quote) => quote.id === currentQuote.id),
         1,
       );
     }
+    // Update UI by showing favorite card or removing favorite card
+
+    // Save favorite quotes in the local storage
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
 }

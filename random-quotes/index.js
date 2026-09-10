@@ -2,6 +2,7 @@ import {
   toggleFavorite,
   hideFavoriteBtn,
   showFavoriteCard,
+  toggleFavoriteBtnIcon,
 } from './src/handlers/favorites.js';
 import { displayQuote, findQuoteById } from './src/handlers/quote.js';
 import {

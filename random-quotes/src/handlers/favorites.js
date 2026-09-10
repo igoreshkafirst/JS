@@ -64,4 +64,10 @@ function removeFavoriteCard(id) {
   if (card) card.remove();
 }
 
-export { handleFavorite, toggleFavorite, hideFavoriteBtn, showFavoriteCard };
+export {
+  handleFavorite,
+  toggleFavorite,
+  hideFavoriteBtn,
+  showFavoriteCard,
+  toggleFavoriteBtnIcon,
+};

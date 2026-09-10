@@ -71,7 +71,7 @@ const favoritesContainer = document.getElementById('favorites-container');
 const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
 quoteFavoriteBtn.addEventListener('click', () => {
-  setCurrentQuote(currentQuote, true);
+  setCurrentQuote({ quote: currentQuote, shouldToggleIsFavorite: true });
 });
 
 const randomQuoteBtn = document.getElementById('random-quote-btn');

@@ -63,8 +63,8 @@ function removeFavoriteCard(id) {
 }
 
 export {
-  handleFavorite,
   hideFavoriteBtn,
   showFavoriteCard,
   toggleFavoriteBtnIcon,
+  toggleFavoriteCard,
 };

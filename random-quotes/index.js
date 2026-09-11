@@ -14,6 +14,10 @@ import { getRandomQuote } from './src/handlers/randomQuote.js';
 const CURRENT_QUOTE_KEY = 'currentQuote';
 const FAVORITE_QUOTES_KEY = 'favoriteQuotes';
 
+const randomQuoteBtn = document.getElementById('random-quote-btn');
+const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
+const favoritesContainer = document.getElementById('favorites-container');
+
 let currentQuote = null;
 const favoriteQuotes = [];
 
@@ -63,14 +67,11 @@ function setCurrentQuote({
   }
 }
 
-const favoritesContainer = document.getElementById('favorites-container');
-const quoteFavoriteBtn = document.getElementById('quote-favorite-btn');
 hideFavoriteBtn();
 quoteFavoriteBtn.addEventListener('click', () => {
   setCurrentQuote({ quote: currentQuote, shouldToggleIsFavorite: true });
 });
 
-const randomQuoteBtn = document.getElementById('random-quote-btn');
 // expecting new random quote { id, text, author }
 randomQuoteBtn.addEventListener('click', () =>
   setCurrentQuote({

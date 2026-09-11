@@ -10,9 +10,16 @@ function handleFavorite(isFavorite) {
   toggleFavoriteBtnIcon(isFavorite);
 }
 
-function toggleFavoriteBtnIcon(isFavorite) {
-  quoteFavoriteBtn.classList.toggle('fa', isFavorite);
-  quoteFavoriteBtn.classList.toggle('far', !isFavorite);
+function toggleFavoriteBtnIcon() {
+  const btn = quoteFavoriteBtn;
+
+  if (btn.classList.contains('fa')) {
+    btn.classList.remove('fa');
+    btn.classList.add('far');
+  } else if (btn.classList.contains('far')) {
+    btn.classList.remove('far');
+    btn.classList.add('fa');
+  }
 }
 
 function showFavoriteBtn() {

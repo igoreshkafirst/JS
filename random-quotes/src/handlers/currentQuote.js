@@ -1,5 +1,3 @@
-import { handleFavorite } from './favorites.js';
-
 function displayQuote(quote) {
   const { id, text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
@@ -21,4 +19,4 @@ function findQuoteById(quotes, id) {
   return quotes.find((quote) => quote.id === id);
 }
 
-export { displayQuote, findQuoteById };
+export { displayQuote };

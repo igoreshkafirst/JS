@@ -5,7 +5,7 @@ import {
   toggleFavoriteCard,
   showFavoriteBtn,
 } from './src/handlers/favorites.js';
-import { displayQuote, findQuoteById } from './src/handlers/quote.js';
+import { displayCurrentQuote } from './src/handlers/currentQuote.js';
 import {
   localStorageSetItem,
   localStorageGetItem,
@@ -39,7 +39,7 @@ function setCurrentQuote({
     );
 
     // Show current quote in the UI
-    displayQuote(currentQuote);
+    displayCurrentQuote(currentQuote);
     // Display favorite icon and change its state
     showFavoriteBtn(currentQuote.isFavorite);
 

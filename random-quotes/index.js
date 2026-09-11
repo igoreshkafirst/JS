@@ -28,9 +28,9 @@ function setCurrentQuote({
   shouldToggleIsFavorite = false,
 }) {
   if (isNew || isFromStorage) {
-    // NEW RANDOM QUOTE
+    // SET CURRENT QUOTE
     // Change app state and write copy of the quote to the current quote
-    currentQuote = quote;
+    currentQuote = { ...quote };
 
     // Check if id of the current quote is among favorite quotes and set isFavorite
     currentQuote.isFavorite = !!favoriteQuotes.find(

@@ -87,19 +87,21 @@ randomQuoteBtn.addEventListener('click', () =>
 );
 
 function init() {
-  const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
-  if (currentQuoteFromStorage) {
-    displayQuote(currentQuoteFromStorage);
-    const quote = findQuoteById(quotes, currentQuoteFromStorage.id);
-    quote.isFavorite = currentQuoteFromStorage.isFavorite;
-    currentQuote = quote;
-  }
-
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
+
   if (favoriteQuotesFromStorage) {
     favoriteQuotesFromStorage.forEach((quote) => {
       favoriteQuotes.push(quote);
       showFavoriteCard(quote, setCurrentQuote, favoritesContainer);
+    });
+  }
+
+  const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
+
+  if (currentQuoteFromStorage) {
+    setCurrentQuote({
+      quote: currentQuoteFromStorage,
+      isFromStorage: true,
     });
   }
 }

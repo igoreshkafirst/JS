@@ -24,10 +24,10 @@ const favoriteQuotes = [];
 function setCurrentQuote({
   quote,
   isNew = false,
+  isFromStorage = false,
   shouldToggleIsFavorite = false,
 }) {
-  if (isNew) {
-    console.log(quote);
+  if (isNew || isFromStorage) {
     // NEW RANDOM QUOTE
     // Change app state and write copy of the quote to the current quote
     currentQuote = quote;

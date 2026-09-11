@@ -3,6 +3,7 @@ import {
   showFavoriteCard,
   toggleFavoriteBtnIcon,
   toggleFavoriteCard,
+  showFavoriteBtn,
 } from './src/handlers/favorites.js';
 import { displayQuote, findQuoteById } from './src/handlers/quote.js';
 import {
@@ -39,6 +40,8 @@ function setCurrentQuote({
 
     // Show current quote in the UI
     displayQuote(currentQuote);
+    // Display favorite icon and change its state
+    showFavoriteBtn(currentQuote.isFavorite);
 
     // Save current quote in the local storage
     localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);

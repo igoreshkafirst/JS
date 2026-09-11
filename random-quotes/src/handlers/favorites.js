@@ -22,8 +22,17 @@ function toggleFavoriteBtnIcon() {
   }
 }
 
-function showFavoriteBtn() {
-  quoteFavoriteBtn.style.display = 'inline-block';
+function showFavoriteBtn(isFavorite) {
+  const btn = quoteFavoriteBtn;
+  btn.style.display = 'inline-block';
+
+  if (isFavorite) {
+    btn.classList.remove('far');
+    btn.classList.add('fa');
+  } else {
+    btn.classList.remove('fa');
+    btn.classList.add('far');
+  }
 }
 
 function hideFavoriteBtn() {
@@ -74,4 +83,5 @@ export {
   showFavoriteCard,
   toggleFavoriteBtnIcon,
   toggleFavoriteCard,
+  showFavoriteBtn,
 };

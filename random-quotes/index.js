@@ -42,7 +42,7 @@ function toggleCurrentQuote() {
     );
   }
   // Update UI by adding or removing favorite card
-  toggleFavoriteCard(currentQuote, setCurrentQuote, favoritesContainer);
+  toggleFavoriteCard(currentQuote, favoritesContainer);
 
   // Save favorite quotes in the local storage
   localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
@@ -86,7 +86,7 @@ function init() {
   if (favoriteQuotesFromStorage) {
     favoriteQuotesFromStorage.forEach((quote) => {
       favoriteQuotes.push(quote);
-      showFavoriteCard(quote, setCurrentQuote, favoritesContainer);
+      showFavoriteCard(quote, favoritesContainer);
     });
   }
 

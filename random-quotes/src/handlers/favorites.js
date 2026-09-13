@@ -1,8 +1,8 @@
 import { quoteFavoriteBtn } from '../../index.js';
 
-function toggleFavoriteCard(quote, setCurrentQuote, container) {
+function toggleFavoriteCard(quote, container) {
   quote.isFavorite
-    ? showFavoriteCard(quote, setCurrentQuote, container)
+    ? showFavoriteCard(quote, container)
     : removeFavoriteCard(quote.id);
 }
 
@@ -50,7 +50,7 @@ function removeFavoriteQuote(quote, setCurrentQuote) {
   }
 }
 
-function showFavoriteCard(quote, setCurrentQuote, container) {
+function showFavoriteCard(quote, container) {
   const { id, text, author } = quote;
   const favoriteCard = document.createElement('div');
   favoriteCard.classList.add('favorite-card');

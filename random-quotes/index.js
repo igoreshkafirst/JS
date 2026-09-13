@@ -70,9 +70,7 @@ function setCurrentQuote({ quote, isNew = false, isFromStorage = false }) {
 }
 
 hideFavoriteBtn();
-quoteFavoriteBtn.addEventListener('click', () => {
-  setCurrentQuote({ quote: currentQuote, shouldToggleIsFavorite: true });
-});
+quoteFavoriteBtn.addEventListener('click', () => toggleCurrentQuote());
 
 // expecting new random quote { id, text, author }
 randomQuoteBtn.addEventListener('click', () =>

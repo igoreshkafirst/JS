@@ -48,25 +48,23 @@ function toggleCurrentQuote() {
   localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
 }
 
-function setCurrentQuote({ quote, isNew = false, isFromStorage = false }) {
-  if (isNew || isFromStorage) {
-    // SET CURRENT QUOTE
-    // Change app state and write copy of the quote to the current quote
-    currentQuote = { ...quote };
+function setCurrentQuote(quote) {
+  // SET CURRENT QUOTE
+  // Change app state and write copy of the quote to the current quote
+  currentQuote = { ...quote };
 
-    // Check if id of the current quote is among favorite quotes and set isFavorite
-    currentQuote.isFavorite = !!favoriteQuotes.find(
-      (favoriteQuote) => favoriteQuote.id === currentQuote.id,
-    );
+  // Check if id of the current quote is among favorite quotes and set isFavorite
+  currentQuote.isFavorite = !!favoriteQuotes.find(
+    (favoriteQuote) => favoriteQuote.id === currentQuote.id,
+  );
 
-    // Show current quote in the UI
-    displayCurrentQuote(currentQuote);
-    // Display favorite icon and change its state
-    showFavoriteBtn(currentQuote.isFavorite);
+  // Show current quote in the UI
+  displayCurrentQuote(currentQuote);
+  // Display favorite icon and change its state
+  showFavoriteBtn(currentQuote.isFavorite);
 
-    // Save current quote in the local storage
-    localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
-  }
+  // Save current quote in the local storage
+  localStorageSetItem(CURRENT_QUOTE_KEY, currentQuote);
 }
 
 hideFavoriteBtn();
@@ -74,10 +72,7 @@ quoteFavoriteBtn.addEventListener('click', () => toggleCurrentQuote());
 
 // expecting new random quote { id, text, author }
 randomQuoteBtn.addEventListener('click', () =>
-  setCurrentQuote({
-    quote: getRandomQuote(),
-    isNew: true,
-  }),
+  setCurrentQuote(getRandomQuote()),
 );
 
 function init() {
@@ -93,10 +88,7 @@ function init() {
   const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
 
   if (currentQuoteFromStorage) {
-    setCurrentQuote({
-      quote: currentQuoteFromStorage,
-      isFromStorage: true,
-    });
+    setCurrentQuote(currentQuoteFromStorage);
   }
 }
 

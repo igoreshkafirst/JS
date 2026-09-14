@@ -22,6 +22,30 @@ const favoritesContainer = document.getElementById('favorites-container');
 let currentQuote = null;
 const favoriteQuotes = [];
 
+function removeFavoriteQuote(id) {
+  // REMOVE FAVORITE QUOTE
+  if (id === currentQuoteId) {
+    toggleCurrentQuote();
+  } else {
+    // Sync app state by remove favorite quote from the favorite quotes array
+    favoriteQuotes.splice(
+      favoriteQuotes.findIndex(
+        (favoriteQuote) => favoriteQuote.id === currentQuote.id,
+      ),
+      1,
+    );
+
+    // Remove favorite card from UI
+    removeFavoriteCard(id);
+
+    // Update UI by toggling favorite Icon (no need to display again current quote)
+    if (id === currentQuoteId) toggleFavoriteBtnIcon();
+
+    // Save favorite quotes in the local storage
+    localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
+  }
+}
+
 function toggleCurrentQuote() {
   // CURRENT QUOTE UPDATE
   // Sync app state and toggle isFavorite of the current quote

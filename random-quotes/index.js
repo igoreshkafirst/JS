@@ -4,6 +4,7 @@ import {
   toggleFavoriteBtnIcon,
   toggleFavoriteCard,
   showFavoriteBtn,
+  removeFavoriteCard,
 } from './src/handlers/favorites.js';
 import { displayCurrentQuote } from './src/handlers/currentQuote.js';
 import {
@@ -34,13 +35,10 @@ function removeFavoriteQuote(id) {
       ),
       1,
     );
-
     // Remove favorite card from UI
     removeFavoriteCard(id);
-
     // Update UI by toggling favorite Icon (no need to display again current quote)
     if (id === currentQuoteId) toggleFavoriteBtnIcon();
-
     // Save favorite quotes in the local storage
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }
@@ -73,7 +71,7 @@ function toggleCurrentQuote() {
 }
 
 function setCurrentQuote(quote) {
-  // SET CURRENT QUOTE
+  // SET CURRENT QUOTE WHEN LOADED FROM LOCAL STORAGE OR RECEIVED RANDOMLY
   // Change app state and write copy of the quote to the current quote
   currentQuote = { ...quote };
 
@@ -92,7 +90,7 @@ function setCurrentQuote(quote) {
 }
 
 hideFavoriteBtn();
-quoteFavoriteBtn.addEventListener('click', () => toggleCurrentQuote());
+quoteFavoriteBtn.addEventListener('click', toggleCurrentQuote);
 
 // expecting new random quote { id, text, author }
 randomQuoteBtn.addEventListener('click', () =>
@@ -101,7 +99,6 @@ randomQuoteBtn.addEventListener('click', () =>
 
 function init() {
   const favoriteQuotesFromStorage = localStorageGetItem(FAVORITE_QUOTES_KEY);
-
   if (favoriteQuotesFromStorage) {
     favoriteQuotesFromStorage.forEach((quote) => {
       favoriteQuotes.push(quote);
@@ -110,7 +107,6 @@ function init() {
   }
 
   const currentQuoteFromStorage = localStorageGetItem(CURRENT_QUOTE_KEY);
-
   if (currentQuoteFromStorage) {
     setCurrentQuote(currentQuoteFromStorage);
   }
@@ -118,4 +114,4 @@ function init() {
 
 window.addEventListener('load', init);
 
-export { quoteFavoriteBtn };
+export { quoteFavoriteBtn, removeFavoriteQuote };

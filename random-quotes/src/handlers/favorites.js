@@ -1,8 +1,8 @@
-import { quoteFavoriteBtn } from '../../index.js';
+import { quoteFavoriteBtn, removeFavoriteQuote } from '../../index.js';
 
-function toggleFavoriteCard(quote, container) {
+function toggleFavoriteCard(quote, setCurrentQuote, container) {
   quote.isFavorite
-    ? showFavoriteCard(quote, container)
+    ? showFavoriteCard(quote, setCurrentQuote, container)
     : removeFavoriteCard(quote.id);
 }
 
@@ -12,7 +12,6 @@ function handleFavorite(isFavorite) {
 
 function toggleFavoriteBtnIcon() {
   const btn = quoteFavoriteBtn;
-
   if (btn.classList.contains('fa')) {
     btn.classList.remove('fa');
     btn.classList.add('far');
@@ -25,7 +24,6 @@ function toggleFavoriteBtnIcon() {
 function showFavoriteBtn(isFavorite) {
   const btn = quoteFavoriteBtn;
   btn.style.display = 'inline-block';
-
   if (isFavorite) {
     btn.classList.remove('far');
     btn.classList.add('fa');
@@ -37,17 +35,6 @@ function showFavoriteBtn(isFavorite) {
 
 function hideFavoriteBtn() {
   quoteFavoriteBtn.style.display = 'none';
-}
-
-function removeFavoriteQuote(quote, setCurrentQuote) {
-  const shouldToggleIsFavorite = true;
-  setCurrentQuote(quote, shouldToggleIsFavorite);
-  removeFavoriteCard(quote.id);
-  const currentQuote = document.querySelector('[data-current-quote-id]');
-  const currentQuoteId = currentQuote.dataset.currentQuoteId;
-  if (quote.id === currentQuoteId) {
-    toggleFavoriteBtnIcon(quote.isFavorite);
-  }
 }
 
 function showFavoriteCard(quote, container) {
@@ -68,9 +55,7 @@ function showFavoriteCard(quote, container) {
     `;
   container.appendChild(favoriteCard);
   const removeButton = favoriteCard.querySelector('.btn-danger');
-  removeButton.addEventListener('click', () =>
-    removeFavoriteQuote(quote, setCurrentQuote),
-  );
+  removeButton.addEventListener('click', () => removeFavoriteQuote(id));
 }
 
 function removeFavoriteCard(id) {
@@ -79,9 +64,11 @@ function removeFavoriteCard(id) {
 }
 
 export {
+  handleFavorite,
+  toggleFavoriteCard,
   hideFavoriteBtn,
+  removeFavoriteCard,
   showFavoriteCard,
   toggleFavoriteBtnIcon,
-  toggleFavoriteCard,
   showFavoriteBtn,
 };

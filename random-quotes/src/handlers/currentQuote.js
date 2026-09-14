@@ -1,5 +1,5 @@
 function displayCurrentQuote(quote) {
-  const { id, text, author } = quote;
+  const { id, text, author, isFavorite } = quote;
   const quoteElement = document.getElementById('quote');
   const quoteTextElement = document.getElementById('quote-text');
   const quoteAuthorElement = document.getElementById('quote-author');

@@ -25,20 +25,18 @@ const favoriteQuotes = [];
 
 function removeFavoriteQuote(id) {
   // REMOVE FAVORITE QUOTE
+  // Removing from favorites current quote by clicking on the card Remove from favorites button
   if (id === currentQuoteId) {
     toggleCurrentQuote();
   } else {
+    // Removing from favorites quote which is not current quote
     // Sync app state by remove favorite quote from the favorite quotes array
     favoriteQuotes.splice(
-      favoriteQuotes.findIndex(
-        (favoriteQuote) => favoriteQuote.id === currentQuote.id,
-      ),
+      favoriteQuotes.findIndex((favoriteQuote) => favoriteQuote.id === id),
       1,
     );
     // Remove favorite card from UI
     removeFavoriteCard(id);
-    // Update UI by toggling favorite Icon (no need to display again current quote)
-    if (id === currentQuoteId) toggleFavoriteBtnIcon();
     // Save favorite quotes in the local storage
     localStorageSetItem(FAVORITE_QUOTES_KEY, favoriteQuotes);
   }

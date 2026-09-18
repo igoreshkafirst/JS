@@ -4,10 +4,9 @@ class Quote {
     this.text = text;
     this.author = author;
     this.isFavorite = false;
-  }
-
-  toString() {
-    return `Quote has id ${this.id} and author is ${this.author}`;
+    this.toString = function () {
+      return `Quote has id ${this.id} and author is ${this.author}`;
+    };
   }
 }
 

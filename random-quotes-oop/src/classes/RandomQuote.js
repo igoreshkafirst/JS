@@ -1,10 +1,15 @@
 import quotes from '../data/quotes.js';
 import { generateRandomInt } from '../utils/math.js';
+import Quote from './Quote.js';
 
 class RandomQuote {
-  getRandomQuote() {
+  static getRandomQuote() {
     const randomIndex = generateRandomInt(quotes.length);
     const { id, text, author } = quotes[randomIndex];
-    return { id: id, text: text, author: author };
+    return new Quote(id, text, author);
   }
 }
+
+RandomQuote.getRandomQuote();
+
+export default RandomQuote;

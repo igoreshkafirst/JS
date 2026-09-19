@@ -1,5 +1,5 @@
 import quotes from '../data/quotes.js';
-import MathUtils from '../utils/math.js';
+import MathUtils from '../utils/MathUtils.js';
 import Quote from './Quote.js';
 
 class RandomQuote {

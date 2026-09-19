@@ -17,7 +17,6 @@ class RandomQuotesApp {
   }
 
   getRandomQuote() {
-    console.log(this);
     const randomQuote = RandomQuote.getRandomQuote();
     this.currentQuote = randomQuote;
     this.displayCurrentQuote();

@@ -3,7 +3,6 @@ class Quote {
     this.id = id;
     this.text = text;
     this.author = author;
-    this.isFavorite = false;
   }
 }
 

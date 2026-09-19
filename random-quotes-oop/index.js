@@ -16,11 +16,16 @@ class RandomQuotesApp {
     this.quoteAuthorElement.textContent = author;
   }
 
+  getRandomQuote() {
+    console.log(this);
+    const randomQuote = RandomQuote.getRandomQuote();
+    this.currentQuote = randomQuote;
+    this.displayCurrentQuote();
+  }
+
   init() {
-    this.randomQuoteBtn.addEventListener('click', () => {
-      const randomQuote = RandomQuote.getRandomQuote();
-      this.currentQuote = randomQuote;
-      this.displayCurrentQuote();
-    });
+    this.randomQuoteBtn.addEventListener('click', () => this.getRandomQuote());
   }
 }
+
+new RandomQuotesApp();

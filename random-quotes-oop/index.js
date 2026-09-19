@@ -7,16 +7,20 @@ class RandomQuotesApp {
     this.quoteAuthorElement = document.getElementById('quote-author');
     this.currentQuote = null;
 
-    this.randomQuoteBtn.addEventListener('click', () => {
-      const randomQuote = RandomQuote.getRandomQuote();
-      this.currentQuote = randomQuote;
-      this.displayCurrentQuote();
-    });
+    this.init();
   }
 
   displayCurrentQuote() {
     const { text, author } = this.currentQuote;
     this.quoteTextElement.textContent = `"${text}"`;
     this.quoteAuthorElement.textContent = author;
+  }
+
+  init() {
+    this.randomQuoteBtn.addEventListener('click', () => {
+      const randomQuote = RandomQuote.getRandomQuote();
+      this.currentQuote = randomQuote;
+      this.displayCurrentQuote();
+    });
   }
 }

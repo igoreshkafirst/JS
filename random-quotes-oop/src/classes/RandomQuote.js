@@ -10,6 +10,4 @@ class RandomQuote {
   }
 }
 
-RandomQuote.getRandomQuote();
-
 export default RandomQuote;

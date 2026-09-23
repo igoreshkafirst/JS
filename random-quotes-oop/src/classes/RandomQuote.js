@@ -12,12 +12,7 @@ class RandomQuote {
   static getRandomQuoteViaAPI() {
     const url = 'https://quoteslate.vercel.app/api/quotes/random';
     fetch(url).then((response) => {
-      console.log(response.ok);
-      console.log(response.headers);
-      console.log(response.status);
-      console.log(response.statusText);
-      console.log(response.body);
-      console.log(response.url);
+      console.log(response);
     });
   }
 }

@@ -3,6 +3,7 @@ import RandomQuote from './RandomQuote.js';
 class RandomQuotesApp {
   constructor() {
     this.randomQuoteBtn = document.getElementById('random-quote-btn');
+    this.randomQuoteAPIBtn = document.getElementById('random-quote-api-btn');
     this.quoteTextElement = document.getElementById('quote-text');
     this.quoteAuthorElement = document.getElementById('quote-author');
     this.currentQuote = null;
@@ -11,7 +12,6 @@ class RandomQuotesApp {
   }
 
   displayCurrentQuote() {
-    console.log(this.currentQuote);
     this.quoteTextElement.textContent = this.currentQuote.formatText();
     this.quoteAuthorElement.textContent = this.currentQuote.formatAuthor();
   }
@@ -22,8 +22,15 @@ class RandomQuotesApp {
     this.displayCurrentQuote();
   }
 
+  getRandomQuoteViaAPI() {
+    RandomQuote.getRandomQuoteViaAPI();
+  }
+
   init() {
     this.randomQuoteBtn.addEventListener('click', () => this.getRandomQuote());
+    this.randomQuoteAPIBtn.addEventListener('click', () =>
+      this.getRandomQuoteViaAPI(),
+    );
   }
 }
 

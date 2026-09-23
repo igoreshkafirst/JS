@@ -11,11 +11,24 @@ class RandomQuote {
 
   static getRandomQuoteViaAPI() {
     const url = 'https://quoteslate.vercel.app/api/quotes/random';
+
+    // Start the timer
+    const startTime = performance.now();
+
     fetch(url)
       .then((response) => {
         return response.json();
       })
-      .then((quote) => console.log(quote));
+      .then((quote) => {
+        // Stop the timer when the response is recieved
+        const endTime = performance.now();
+        const elapsedTime = Math.floor(endTime - startTime);
+        console.log('Elapsed time (ms):', elapsedTime);
+        console.log(quote);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 }
 

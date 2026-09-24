@@ -23,7 +23,10 @@ class RandomQuotesApp {
   }
 
   getRandomQuoteViaAPI() {
-    RandomQuote.getRandomQuoteViaAPI();
+    const randomQuoteViaAPI = RandomQuote.getRandomQuoteViaAPI();
+    console.log(randomQuoteViaAPI);
+    this.currentQuote = randomQuoteViaAPI;
+    this.displayCurrentQuote();
   }
 
   init() {

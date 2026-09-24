@@ -17,21 +17,22 @@ class RandomQuotesApp {
     this.quoteAuthorElement.textContent = this.currentQuote.formatAuthor();
   }
 
-  getRandomQuote() {
-    const randomQuote = RandomQuote.getRandomQuote();
-    if (randomQuote instanceof Quote) {
-      this.currentQuote = randomQuote;
+  changeCurrentQuote(newQuote) {
+    if (newQuote instanceof Quote) {
+      this.currentQuote = newQuote;
       this.displayCurrentQuote();
     }
   }
 
+  getRandomQuote() {
+    const randomQuote = RandomQuote.getRandomQuote();
+    this.changeCurrentQuote(randomQuote);
+  }
+
   getRandomQuoteViaAPI() {
-    RandomQuote.getRandomQuoteViaAPI().then((quote) => {
-      if (quote instanceof Quote) {
-        this.currentQuote = quote;
-        this.displayCurrentQuote();
-      }
-    });
+    RandomQuote.getRandomQuoteViaAPI().then((quote) =>
+      this.changeCurrentQuote(quote),
+    );
   }
 
   init() {

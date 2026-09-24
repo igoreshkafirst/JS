@@ -19,8 +19,10 @@ class RandomQuotesApp {
 
   getRandomQuote() {
     const randomQuote = RandomQuote.getRandomQuote();
-    this.currentQuote = randomQuote;
-    this.displayCurrentQuote();
+    if (randomQuote instanceof Quote) {
+      this.currentQuote = randomQuote;
+      this.displayCurrentQuote();
+    }
   }
 
   getRandomQuoteViaAPI() {

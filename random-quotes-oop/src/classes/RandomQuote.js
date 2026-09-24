@@ -13,17 +13,9 @@ class RandomQuote {
     const url = 'https://quoteslate.vercel.app/api/quotes/random';
 
     return fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((quote) => {
-        console.log(quote);
-        const { _id: id, content, author } = quote;
-        return new Quote(id, content, author);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+      .then((response) => response.json())
+      .then(({ _id: id, content, author }) => new Quote(id, content, author))
+      .catch((error) => console.error(error));
   }
 }
 

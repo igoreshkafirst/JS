@@ -1,3 +1,4 @@
+import Quote from './Quote.js';
 import RandomQuote from './RandomQuote.js';
 
 class RandomQuotesApp {
@@ -24,8 +25,10 @@ class RandomQuotesApp {
 
   getRandomQuoteViaAPI() {
     RandomQuote.getRandomQuoteViaAPI().then((quote) => {
-      this.currentQuote = quote;
-      this.displayCurrentQuote();
+      if (quote instanceof Quote) {
+        this.currentQuote = quote;
+        this.displayCurrentQuote();
+      }
     });
   }
 

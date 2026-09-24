@@ -25,8 +25,7 @@ class RandomQuotesApp {
   }
 
   getRandomQuote() {
-    const randomQuote = RandomQuote.getRandomQuote();
-    this.changeCurrentQuote(randomQuote);
+    this.changeCurrentQuote(RandomQuote.getRandomQuote());
   }
 
   getRandomQuoteViaAPI() {

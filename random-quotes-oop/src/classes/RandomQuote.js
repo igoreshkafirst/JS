@@ -12,10 +12,14 @@ class RandomQuote {
   static async getRandomQuoteViaAPI() {
     const url = 'https://quoteslate.vercel.app/api/quotes/random';
     const options = { headers: { 'Content-Type': 'application/json' } };
-    const response = await fetch(url, options);
-    const quote = await response.json();
-    const { _id: id, content, author } = quote;
-    return new Quote(id, content, author);
+    try {
+      const response = await fetch(url, options);
+      const quote = await response.json();
+      const { _id: id, content, author } = quote;
+      return new Quote(id, content, author);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 

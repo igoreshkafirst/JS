@@ -18,6 +18,7 @@ class RandomQuotesApp {
   }
 
   changeCurrentQuote(newQuote) {
+    console.log(newQuote);
     if (newQuote instanceof Quote) {
       this.currentQuote = newQuote;
       this.displayCurrentQuote();
@@ -28,16 +29,9 @@ class RandomQuotesApp {
     this.changeCurrentQuote(RandomQuote.getRandomQuote());
   }
 
-  getRandomQuoteViaAPI() {
-    const url = 'https://quoteslate.vercel.app/api/quotes/random';
-    const options = { headers: { 'Content-Type': 'application/json' } };
-    fetch(url, options)
-      .then((response) => response.json())
-      .then(({ _id: id, content, author }) => {
-        const quoteFromAPI = new Quote(id, content, author);
-        this.changeCurrentQuote(quoteFromAPI);
-      })
-      .catch((error) => console.error(error));
+  async getRandomQuoteViaAPI() {
+    const quoteViaAPI = await RandomQuote.getRandomQuoteViaAPI();
+    this.changeCurrentQuote(quoteViaAPI);
   }
 
   init() {

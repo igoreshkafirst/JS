@@ -29,8 +29,9 @@ class RandomQuotesApp {
   }
 
   async getRandomQuoteViaAPI() {
-    const quoteViaAPI = await RandomQuote.getRandomQuoteViaAPI();
-    console.log(quoteViaAPI);
+    const promise = await RandomQuote.getRandomQuoteViaAPI();
+    console.log(promise);
+    const quoteViaAPI = await promise;
     this.changeCurrentQuote(quoteViaAPI);
   }
 

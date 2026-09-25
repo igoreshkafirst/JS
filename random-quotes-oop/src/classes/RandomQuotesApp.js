@@ -29,9 +29,15 @@ class RandomQuotesApp {
   }
 
   getRandomQuoteViaAPI() {
-    RandomQuote.getRandomQuoteViaAPI().then((quote) =>
-      this.changeCurrentQuote(quote),
-    );
+    const url = 'https://quoteslate.vercel.app/api/quotes/random';
+    const options = { headers: { 'Content-Type': 'application/json' } };
+    fetch(url, options)
+      .then((response) => response.json())
+      .then(({ _id: id, content, author }) => {
+        const quoteFromAPI = new Quote(id, content, author);
+        this.changeCurrentQuote(quoteFromAPI);
+      })
+      .catch((error) => console.error(error));
   }
 
   init() {

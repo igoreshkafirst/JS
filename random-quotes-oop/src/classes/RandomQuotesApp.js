@@ -18,7 +18,6 @@ class RandomQuotesApp {
   }
 
   changeCurrentQuote(newQuote) {
-    console.log('CALLED');
     if (newQuote instanceof Quote) {
       this.currentQuote = newQuote;
       this.displayCurrentQuote();
@@ -30,14 +29,7 @@ class RandomQuotesApp {
   }
 
   async getRandomQuoteViaAPI() {
-    try {
-      const promise = await RandomQuote.getRandomQuoteViaAPI();
-      console.log(promise);
-      const quoteViaAPI = await promise;
-      this.changeCurrentQuote(quoteViaAPI);
-    } catch (error) {
-      console.error(error);
-    }
+    this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaAPI());
   }
 
   init() {

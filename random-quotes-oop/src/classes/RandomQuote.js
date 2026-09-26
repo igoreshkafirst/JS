@@ -19,6 +19,7 @@ class RandomQuote {
       return new Quote(id, content, author);
     } catch (error) {
       console.error(error);
+      throw new Error('Error from RandomQuote class');
     }
   }
 }

@@ -14,7 +14,10 @@ class RandomQuote {
     const options = { headers: { 'Content-Type': 'application/json' } };
     try {
       const response = await fetch(url, options);
-      const { _id: id, content, author } = await response.json();
+      const quotes = await response.json();
+      console.log(quotes);
+      const quote = quotes[0];
+      const { _id: id, content, author } = quote;
       return new Quote(id, content, author);
     } catch (error) {
       console.error(error);

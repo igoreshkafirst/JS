@@ -15,10 +15,11 @@ class RandomQuote {
     try {
       const response = await fetch(url, options);
       const quotes = await response.json();
-      console.log(quotes);
-      const quote = quotes[0];
-      const { _id: id, content, author } = quote;
-      return new Quote(id, content, author);
+      if (quotes.length === 1) {
+        const quote = quotes[0];
+        const { _id: id, content, author } = quote;
+        return new Quote(id, content, author);
+      }
     } catch (error) {
       console.error(error);
     }

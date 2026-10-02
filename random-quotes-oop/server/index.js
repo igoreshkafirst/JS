@@ -2,4 +2,10 @@ const express = require('express'); // CommonJS module
 const app = express();
 const PORT = 3000;
 
-console.log(app);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`);
+});

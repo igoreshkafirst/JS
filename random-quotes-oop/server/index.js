@@ -5,11 +5,11 @@ const PORT = 3000;
 
 function getRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  const quote = quotes[randomIndex];
-  return quote;
+  return quotes[randomIndex];
 }
 
 app.get('/quotes/random-single', (req, res) => {
+  console.log(req.headers['user-agent']);
   const randomQuote = getRandomQuote();
   res.json(randomQuote);
 });

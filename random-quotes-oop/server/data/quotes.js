@@ -1,54 +1,56 @@
 const quotes = [
   {
-    id: 'c718475e',
-    text: 'The only way to do great work is to love what you do',
+    id: 'd718475e',
+    text: "Believe you can and you're halfway there.",
+    author: 'Theodore Roosevelt',
+  },
+  {
+    id: 'e452d8aa',
+    text: 'The only way to do great work is to love what you do.',
     author: 'Steve Jobs',
   },
   {
-    id: '3452d8aa',
-    text: 'Innovation distinguishes between a leader and a follower',
+    id: 'f6487b49',
+    text: 'It does not matter how slowly you go as long as you do not stop.',
+    author: 'Confucius',
+  },
+  {
+    id: 'g3736f8e',
+    text: 'The best way to predict the future is to create it.',
+    author: 'Peter Drucker',
+  },
+  {
+    id: 'h20d4dac',
+    text: 'Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work.',
     author: 'Steve Jobs',
   },
   {
-    id: '56487b49',
-    text: "Your time is limited, so don't waste it living someone else's life",
-    author: 'Steve Jobs',
+    id: 'i446d47ef',
+    text: "You don't have to be great to start, but you have to start to be great.",
+    author: 'Zig Ziglar',
   },
   {
-    id: '1e3736f8',
-    text: 'Strive not to be a success, but rather to be of value',
-    author: 'Albert Einstein',
-  },
-  {
-    id: '2520d4da',
-    text: 'The only thing we have to fear is fear itself',
+    id: 'j608d995',
+    text: 'The only limit to our realization of tomorrow will be our doubts of today.',
     author: 'Franklin D. Roosevelt',
   },
   {
-    id: '0446d47e',
-    text: 'Life is what happens when you’re busy making other plans',
-    author: 'John Lennon',
-  },
-  {
-    id: 'ea08d995',
-    text: 'Success is not final, failure is not fatal: It is the courage to continue that counts',
-    author: 'Winston Churchill',
-  },
-  {
-    id: '9ac6bee8',
-    text: 'The greatest glory in living lies not in never falling, but in rising every time we fall',
+    id: 'k9ac6bee8',
+    text: 'It always seems impossible until it is done.',
     author: 'Nelson Mandela',
   },
   {
-    id: '05370aeb',
-    text: 'The future belongs to those who believe in the beauty of their dreams',
-    author: 'Eleanor Roosevelt',
+    id: 'l5370aeb0',
+    text: 'Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.',
+    author: 'Albert Schweitzer',
   },
   {
-    id: '423c35bb',
-    text: 'You miss 100% of the shots you don’t take',
-    author: 'Wayne Gretzky',
+    id: 'm23c35bbc',
+    text: 'The only person you are destined to become is the person you decide to be.',
+    author: 'Ralph Waldo Emerson',
   },
 ];
+
+console.log(quotes);
 
 module.exports = quotes;

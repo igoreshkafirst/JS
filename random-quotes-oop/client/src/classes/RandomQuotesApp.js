@@ -23,6 +23,7 @@ class RandomQuotesApp {
   }
 
   changeCurrentQuote(newQuote) {
+    console.log(newQuote);
     if (newQuote instanceof Quote) {
       this.currentQuote = newQuote;
       this.displayCurrentQuote();

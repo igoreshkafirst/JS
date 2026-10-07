@@ -9,17 +9,6 @@ function getRandomQuote() {
   return quotes[randomIndex];
 }
 
-app.use((req, res, next) => {
-  // ... must call next()
-  console.log('Middleware 1');
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('Middleware 2');
-  res.send('Answer from middleware 2');
-});
-
 const corsOptions = {
   origin: '*', // Default cross-origin value for CORS
 };
@@ -28,6 +17,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/quotes/random-single', (req, res) => {
+  console.log(req.headers);
   const randomQuote = getRandomQuote();
   res.json(randomQuote);
 });

@@ -9,8 +9,19 @@ function getRandomQuote() {
   return quotes[randomIndex];
 }
 
+app.use((req, res, next) => {
+  // ... must call next()
+  console.log('Middleware 1');
+  next();
+});
+
+app.use((req, res, next) => {
+  console.log('Middleware 2');
+  res.send('Answer from middleware 2');
+});
+
 const corsOptions = {
-  origin: ['http://localhost:8080', 'http://127.0.0.1:8080'],
+  origin: '*', // Default cross-origin value for CORS
 };
 
 // Allow CORS for all origins

@@ -9,24 +9,12 @@ function getRandomQuote() {
   return quotes[randomIndex];
 }
 
-app.use((req, res, next) => {
-  // ... must call next()
-  console.log('Middleware 1 fn called');
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('Middleware 2 fn called');
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log('Middleware 3 fn called');
-  next();
-});
+const corsOptions = {
+  origin: ['http://localhost:8080', 'http://127.0.0.1:8080'],
+};
 
 // Allow CORS for all origins
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.get('/quotes/random-single', (req, res) => {
   const randomQuote = getRandomQuote();

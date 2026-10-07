@@ -1,5 +1,6 @@
 class Quote {
-  constructor({ id, text, author }) {
+  constructor(quote) {
+    const { id, text, author } = quote;
     this.id = id;
     this.text = text;
     this.author = author;

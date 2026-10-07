@@ -17,7 +17,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.get('/quotes/random-single', (req, res) => {
-  console.log(req.headers);
   const randomQuote = getRandomQuote();
   res.json(randomQuote);
 });

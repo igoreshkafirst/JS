@@ -33,12 +33,12 @@ class RandomQuotesApp {
     this.changeCurrentQuote(RandomQuote.getRandomQuote());
   }
 
-  async handleRandomQuoteViaPublicAPI() {
-    this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaPublicAPI());
-  }
-
-  async handleRandomQuoteViaOwnAPI() {
-    this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaOwnAPI());
+  async handleRandomQuoteViaAPI(apiIsOwn = false) {
+    if (apiIsOwn) {
+      this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaOwnAPI());
+    } else {
+      this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaPublicAPI());
+    }
   }
 
   init() {
@@ -46,10 +46,10 @@ class RandomQuotesApp {
       this.randomQuoteHandler(),
     );
     this.randomQuotePublicAPIBtn.addEventListener('click', () =>
-      this.handleRandomQuoteViaPublicAPI(),
+      this.handleRandomQuoteViaAPI(),
     );
     this.randomQuoteOwnAPIBtn.addEventListener('click', () =>
-      this.handleRandomQuoteViaOwnAPI(),
+      this.handleRandomQuoteViaAPI(true),
     );
   }
 }

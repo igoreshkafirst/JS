@@ -33,7 +33,8 @@ class RandomQuote {
     try {
       const response = await fetch(url, options);
       const quote = await response.json();
-      return new Quote(quote);
+      const { id, text, author } = quote;
+      return new Quote(id, text, author);
     } catch (error) {
       console.error(error);
     }

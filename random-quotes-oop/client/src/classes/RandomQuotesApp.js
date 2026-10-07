@@ -34,11 +34,11 @@ class RandomQuotesApp {
   }
 
   async handleRandomQuoteViaAPI({ apiIsOwn = false } = {}) {
-    if (apiIsOwn) {
-      this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaOwnAPI());
-    } else {
-      this.changeCurrentQuote(await RandomQuote.getRandomQuoteViaPublicAPI());
-    }
+    this.changeCurrentQuote(
+      apiIsOwn
+        ? await RandomQuote.getRandomQuoteViaOwnAPI()
+        : await RandomQuote.getRandomQuoteViaPublicAPI(),
+    );
   }
 
   init() {

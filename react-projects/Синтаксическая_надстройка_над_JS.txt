@@ -1,0 +1,78 @@
+React.createElement(
+  Card,
+  {
+    style: {
+      backgroundColor: `rgb(${initialColor}, ${opacity})`,
+    },
+    className: 'm-2',
+  },
+  React.createElement(Card.Img, {
+    variant: 'top',
+    style: imageLoaded
+      ? { opacity: 1, transition: 'opacity 2s ease-in-out' }
+      : { opacity: 0 },
+    src: image,
+    alt: title,
+    onLoad: () => setImageLoaded(true),
+  }),
+);
+
+Именно. JSX — это синтаксическое расширение JavaScript, которое позволяет описывать интерфейс в HTML-подобной форме. Твой пример показывает, как ту же структуру можно записать с помощью `React.createElement()`.
+
+## Как сопоставить эти две записи
+
+1\. JSX-вариант:
+
+```
+<Card
+  style={{
+    backgroundColor: `rgb(${initialColor}, ${opacity})`,
+  }}
+  className="m-2"
+>
+  <Card.Img
+    variant="top"
+    src={image}
+    alt={title}
+    onLoad={() => setImageLoaded(true)}
+  />
+</Card>
+```
+
+2\. Вариант с `React.createElement()`:
+
+```
+React.createElement(
+  Card,
+  {
+    style: {
+      backgroundColor: `rgb(${initialColor}, ${opacity})`,
+    },
+    className: 'm-2',
+  },
+  React.createElement(Card.Img, {
+    variant: 'top',
+    style: imageLoaded
+      ? { opacity: 1, transition: 'opacity 2s ease-in-out' }
+      : { opacity: 0 },
+    src: image,
+    alt: title,
+    onLoad: () => setImageLoaded(true),
+  }),
+);
+```
+
+Второй вариант явно показывает, из каких частей состоит JSX.
+
+| JSX                                   | `React.createElement()`                              |
+| ------------------------------------- | ---------------------------------------------------- |
+| `<Card ...>`                          | Первый аргумент — `Card`                             |
+| `style={...}` и `className="m-2"`     | Второй аргумент — объект свойств                     |
+| `<Card.Img ... />`                    | Вложенный вызов `React.createElement(Card.Img, ...)` |
+| `onLoad={() => setImageLoaded(true)}` | Функция, передаваемая в объекте свойств              |
+
+Обрати внимание: третий аргумент `React.createElement()` здесь — дочерний элемент `Card.Img`. Если бы у `Card` было несколько дочерних элементов, они передавались бы следующими аргументами.
+
+Главная мысль: JSX — более удобная запись, а `React.createElement()` показывает структуру создаваемых React-элементов явно.
+
+Небольшой нюанс: в твоём предыдущем примере было написано `<Card.img>`, а здесь — `Card.Img`. JavaScript различает регистр букв, поэтому имя должно совпадать с реальным свойством компонента.

@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla JS</title>
+    <style>
+      .app {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <button id="my-button" onclick="changeButtonText('my-button')">
-      Click me
-    </button>
+    <div class="app">
+      <button id="my-button" onclick="changeButtonText('my-button')">
+        Click me
+      </button>
+    </div>
     <script>
       function changeButtonText(id) {
         const myButton = document.getElementById(id);

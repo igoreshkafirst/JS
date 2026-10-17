@@ -15,12 +15,9 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
       crossorigin
     ></script>
-    <script>
-      const helloWorldHeading = /*#__PURE__*/ React.createElement(
-        'h1',
-        null,
-        'Hello from React',
-      );
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const helloWorldHeading = <h1>Hello from React</h1>;
 
       const container = document.getElementById('app');
       const root = ReactDOM.createRoot(container);

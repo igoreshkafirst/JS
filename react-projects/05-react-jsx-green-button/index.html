@@ -15,5 +15,13 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
       crossorigin
     ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const App = <button>Click me</button>;
+
+      const container = document.getElementById('app');
+      const root = ReactDOM.createRoot(container);
+      root.render(App);
+    </script>
   </body>
 </html>

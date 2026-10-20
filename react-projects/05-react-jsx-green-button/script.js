@@ -1,6 +1,8 @@
+const buttonText = 'Click me';
+
 const App = (
   <div className="app">
-    <button>Click me</button>
+    <button>{buttonText}</button>
   </div>
 );
 

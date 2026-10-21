@@ -3,7 +3,7 @@ const App = () => {
   console.log(buttonText);
 
   const onButtonClick = () => {
-    setButtonText('Hello from React');
+    setButtonText(`Hello from React, ${Math.random()}`);
   };
   return (
     <div className="app">
